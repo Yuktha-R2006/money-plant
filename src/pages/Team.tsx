@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Mail, Linkedin, User } from "lucide-react";
+import { Mail, Linkedin, User, Instagram } from "lucide-react";
 
 export function Team() {
   const facultyCoordinator = {
@@ -130,20 +130,32 @@ export function Team() {
                       <p className="text-lg text-[#d4af37] mb-1">{coordinator.role}</p>
                       <p className="text-[#9ca3af] mb-4 text-sm">{coordinator.year}</p>
                       <p className="text-[#9ca3af] leading-relaxed mb-6">{coordinator.bio}</p>
-                      <div className="flex items-center gap-4">
+                      <div className="flex items-center justify-center gap-4">
+                        {/* LinkedIn */}
                         <a
-                          href={`mailto:${coordinator.email}`}
-                          className="flex items-center justify-center w-10 h-10 bg-gray-700/50 border border-gray-600/50 text-gray-400 hover:bg-gray-600/50 hover:text-yellow-400 hover:border-yellow-500/30 rounded-full transition-all duration-300"
-                          title="Email"
-                        >
-                          <Mail className="w-5 h-5" />
-                        </a>
-                        <a
-                          href={coordinator.linkedin}
-                          className="flex items-center justify-center w-10 h-10 bg-gray-700/50 border border-gray-600/50 text-gray-400 hover:bg-gray-600/50 hover:text-yellow-400 hover:border-yellow-500/30 rounded-full transition-all duration-300"
+                          href={coordinator.linkedin || '#'}
+                          className="flex items-center justify-center w-10 h-10 bg-gray-700/50 border border-gray-600/50 text-gray-400 hover:bg-gray-600/50 hover:text-yellow-400 hover:border-yellow-500/30 rounded-full transition-all duration-300 hover:scale-105"
                           title="LinkedIn"
                         >
                           <Linkedin className="w-5 h-5" />
+                        </a>
+                        
+                        {/* Instagram */}
+                        <a
+                          href="#"
+                          className="flex items-center justify-center w-10 h-10 bg-gray-700/50 border border-gray-600/50 text-gray-400 hover:bg-gray-600/50 hover:text-yellow-400 hover:border-yellow-500/30 rounded-full transition-all duration-300 hover:scale-105"
+                          title="Instagram"
+                        >
+                          <Instagram className="w-5 h-5" />
+                        </a>
+                        
+                        {/* Email */}
+                        <a
+                          href={`mailto:${coordinator.email || ''}`}
+                          className="flex items-center justify-center w-10 h-10 bg-gray-700/50 border border-gray-600/50 text-gray-400 hover:bg-gray-600/50 hover:text-yellow-400 hover:border-yellow-500/30 rounded-full transition-all duration-300 hover:scale-105"
+                          title="Email"
+                        >
+                          <Mail className="w-5 h-5" />
                         </a>
                       </div>
                     </div>

@@ -150,38 +150,37 @@ export function TeamDynamic() {
                       <p className="text-lg text-[#d4af37] mb-1">{coordinator.role}</p>
                       <p className="text-[#9ca3af] mb-4 text-sm">{coordinator.year}</p>
                       <p className="text-[#9ca3af] leading-relaxed mb-6">{coordinator.bio}</p>
-                      <div className="flex items-center gap-4">
-                        {coordinator.email && (
-                          <a
-                            href={`mailto:${coordinator.email}`}
-                            className="flex items-center justify-center w-10 h-10 bg-gray-700/50 border border-gray-600/50 text-gray-400 hover:bg-gray-600/50 hover:text-yellow-400 hover:border-yellow-500/30 rounded-full transition-all duration-300"
-                            title="Email"
-                          >
-                            <Mail className="w-5 h-5" />
-                          </a>
-                        )}
-                        {coordinator.linkedin && coordinator.linkedin !== "#" && (
-                          <a
-                            href={coordinator.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-center w-10 h-10 bg-gray-700/50 border border-gray-600/50 text-gray-400 hover:bg-gray-600/50 hover:text-yellow-400 hover:border-yellow-500/30 rounded-full transition-all duration-300"
-                            title="LinkedIn"
-                          >
-                            <Linkedin className="w-5 h-5" />
-                          </a>
-                        )}
-                        {coordinator.instagram && coordinator.instagram !== "#" && (
-                          <a
-                            href={coordinator.instagram}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-center w-10 h-10 bg-gray-700/50 border border-gray-600/50 text-gray-400 hover:bg-gray-600/50 hover:text-yellow-400 hover:border-yellow-500/30 rounded-full transition-all duration-300"
-                            title="Instagram"
-                          >
-                            <Instagram className="w-5 h-5" />
-                          </a>
-                        )}
+                      <div className="flex items-center justify-center gap-4">
+                        {/* LinkedIn */}
+                        <a
+                          href={coordinator.linkedin || '#'}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center w-10 h-10 bg-gray-700/50 border border-gray-600/50 text-gray-400 hover:bg-gray-600/50 hover:text-yellow-400 hover:border-yellow-500/30 rounded-full transition-all duration-300 hover:scale-105"
+                          title="LinkedIn"
+                        >
+                          <Linkedin className="w-5 h-5" />
+                        </a>
+                        
+                        {/* Instagram */}
+                        <a
+                          href={coordinator.instagram || '#'}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center w-10 h-10 bg-gray-700/50 border border-gray-600/50 text-gray-400 hover:bg-gray-600/50 hover:text-yellow-400 hover:border-yellow-500/30 rounded-full transition-all duration-300 hover:scale-105"
+                          title="Instagram"
+                        >
+                          <Instagram className="w-5 h-5" />
+                        </a>
+                        
+                        {/* Email */}
+                        <a
+                          href={`mailto:${coordinator.email || ''}`}
+                          className="flex items-center justify-center w-10 h-10 bg-gray-700/50 border border-gray-600/50 text-gray-400 hover:bg-gray-600/50 hover:text-yellow-400 hover:border-yellow-500/30 rounded-full transition-all duration-300 hover:scale-105"
+                          title="Email"
+                        >
+                          <Mail className="w-5 h-5" />
+                        </a>
                       </div>
                     </div>
                   </div>
