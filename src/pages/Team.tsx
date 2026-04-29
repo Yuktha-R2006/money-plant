@@ -117,10 +117,10 @@ export function Team() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="group"
                 >
-                  <div className="bg-gradient-to-br from-[#141824] to-[#1f2937] rounded-2xl border border-[#d4af37]/20 overflow-hidden hover:border-[#d4af37] hover:shadow-xl hover:shadow-[#d4af37]/10 transition-all duration-500 h-full">
-                    <div className="bg-gradient-to-r from-[#d4af37]/20 to-[#C9A227]/20 p-8 flex items-center justify-center">
-                      <div className="w-32 h-32 bg-gradient-to-br from-[#d4af37] to-[#C9A227] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <User className="w-16 h-16 text-[#0a0e1a]" />
+                  <div className="bg-white/3 backdrop-blur-lg rounded-2xl border border-yellow-500/15 p-8 transition-all duration-300 group-hover:scale-103 group-hover:shadow-lg group-hover:shadow-yellow-500/12 h-full">
+                    <div className="flex justify-center mb-6">
+                      <div className="w-32 h-32 bg-gray-800/50 rounded-full flex items-center justify-center border border-yellow-500/30 group-hover:scale-105 transition-transform duration-300">
+                        <User className="w-16 h-16 text-gray-400/80" />
                       </div>
                     </div>
                     <div className="p-8">
@@ -133,14 +133,14 @@ export function Team() {
                       <div className="flex items-center gap-4">
                         <a
                           href={`mailto:${coordinator.email}`}
-                          className="flex items-center justify-center w-10 h-10 bg-[#1f2937] hover:bg-[#d4af37] text-[#9ca3af] hover:text-[#0a0e1a] rounded-full transition-all duration-300"
+                          className="flex items-center justify-center w-10 h-10 bg-gray-700/50 border border-gray-600/50 text-gray-400 hover:bg-gray-600/50 hover:text-yellow-400 hover:border-yellow-500/30 rounded-full transition-all duration-300"
                           title="Email"
                         >
                           <Mail className="w-5 h-5" />
                         </a>
                         <a
                           href={coordinator.linkedin}
-                          className="flex items-center justify-center w-10 h-10 bg-[#1f2937] hover:bg-[#d4af37] text-[#9ca3af] hover:text-[#0a0e1a] rounded-full transition-all duration-300"
+                          className="flex items-center justify-center w-10 h-10 bg-gray-700/50 border border-gray-600/50 text-gray-400 hover:bg-gray-600/50 hover:text-yellow-400 hover:border-yellow-500/30 rounded-full transition-all duration-300"
                           title="LinkedIn"
                         >
                           <Linkedin className="w-5 h-5" />
