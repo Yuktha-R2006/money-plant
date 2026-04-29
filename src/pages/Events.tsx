@@ -51,14 +51,14 @@ export function Events() {
       googleFormUrl: "https://forms.google.com/example-hackonomics",
       registrationOpen: true,
       icon: <Lightbulb className="w-6 h-6" />,
-      gradient: "from-[#10b981] to-[#059669]",
+      gradient: "from-[#C9A227] to-[#A67C00]",
     },
   ];
 
   return (
     <div className="pt-20">
       <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#d4af37]/5 via-transparent to-[#10b981]/5"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#d4af37]/5 via-transparent to-[#C9A227]/5"></div>
         <div className="absolute top-20 right-10 w-96 h-96 bg-[#d4af37]/10 rounded-full blur-3xl"></div>
 
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
@@ -69,7 +69,7 @@ export function Events() {
             className="text-center mb-16"
           >
             <h1 className="text-6xl mb-6 text-[#e8e8ea]">Our Events</h1>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#d4af37] to-[#10b981] mx-auto mb-6"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#d4af37] to-[#C9A227] mx-auto mb-6"></div>
             <p className="text-xl text-[#9ca3af] max-w-3xl mx-auto leading-relaxed">
               Join our premium workshops, seminars, and competitions designed to elevate your
               financial expertise and entrepreneurial mindset
@@ -95,7 +95,7 @@ export function Events() {
                         <span
                           className={`px-3 py-1 rounded-full text-sm backdrop-blur-sm ${
                             event.registrationOpen
-                              ? "bg-[#10b981]/30 text-white"
+                              ? "bg-[#C9A227]/30 text-white"
                               : "bg-red-500/30 text-white"
                           }`}
                         >

@@ -29,7 +29,7 @@ export function Contact() {
   return (
     <div className="pt-20">
       <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#d4af37]/5 via-transparent to-[#10b981]/5"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#d4af37]/5 via-transparent to-[#C9A227]/5"></div>
         <div className="absolute top-20 right-10 w-96 h-96 bg-[#d4af37]/10 rounded-full blur-3xl"></div>
 
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
@@ -40,7 +40,7 @@ export function Contact() {
             className="text-center mb-16"
           >
             <h1 className="text-6xl mb-6 text-[#e8e8ea]">Join Money Plant Club</h1>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#d4af37] to-[#10b981] mx-auto mb-6"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#d4af37] to-[#C9A227] mx-auto mb-6"></div>
             <p className="text-xl text-[#9ca3af] max-w-3xl mx-auto leading-relaxed">
               Take the first step towards financial excellence. Become part of our community today.
             </p>
@@ -190,7 +190,7 @@ export function Contact() {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-[#141824] to-[#1f2937] rounded-2xl border border-[#10b981]/30 p-8">
+              <div className="bg-gradient-to-br from-[#141824] to-[#1f2937] rounded-2xl border border-[#C9A227]/30 p-8">
                 <h3 className="text-2xl mb-6 text-[#e8e8ea]">Connect With Us</h3>
                 <div className="grid grid-cols-2 gap-4">
                   <a
@@ -232,23 +232,23 @@ export function Contact() {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-[#d4af37]/10 to-[#10b981]/10 rounded-2xl border border-[#d4af37]/30 p-8">
+              <div className="bg-gradient-to-br from-[#d4af37]/10 to-[#C9A227]/10 rounded-2xl border border-[#d4af37]/30 p-8">
                 <h3 className="text-xl mb-4 text-[#e8e8ea]">Membership Benefits</h3>
                 <ul className="space-y-3 text-[#9ca3af]">
                   <li className="flex items-start gap-2">
-                    <span className="text-[#10b981] mt-1">✓</span>
+                    <span className="text-[#C9A227] mt-1">✓</span>
                     <span>Free access to all workshops and seminars</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-[#10b981] mt-1">✓</span>
+                    <span className="text-[#C9A227] mt-1">✓</span>
                     <span>Networking with industry professionals</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-[#10b981] mt-1">✓</span>
+                    <span className="text-[#C9A227] mt-1">✓</span>
                     <span>Exclusive trading resources and materials</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-[#10b981] mt-1">✓</span>
+                    <span className="text-[#C9A227] mt-1">✓</span>
                     <span>Certificate of membership and participation</span>
                   </li>
                 </ul>

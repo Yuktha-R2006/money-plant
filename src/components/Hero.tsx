@@ -29,7 +29,7 @@ export default function Hero() {
         {[...Array(10)].map((_, i) => (
           <div
             key={i}
-            className="absolute text-green-400/20 font-mono text-sm animate-pulse"
+            className="absolute text-yellow-400/20 font-mono text-sm animate-pulse"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -46,7 +46,7 @@ export default function Hero() {
 
       {/* Mouse-following glow */}
       <div
-        className="absolute w-96 h-96 rounded-full bg-green-500/10 blur-3xl pointer-events-none transition-all duration-300 ease-out"
+        className="absolute w-96 h-96 rounded-full bg-yellow-500/10 blur-3xl pointer-events-none transition-all duration-300 ease-out"
         style={{
           left: mousePosition.x - 192,
           top: mousePosition.y - 192,
@@ -57,7 +57,7 @@ export default function Hero() {
         
         {/* Main content */}
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6">
-          <span className="bg-gradient-to-r from-green-400 via-green-500 to-green-600 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent">
             Money Plant Club
           </span>
         </h1>
@@ -74,15 +74,15 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
             onClick={() => scrollToSection('join')}
-            className="group relative px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-green-500/25"
+            className="group relative px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-yellow-500/25"
           >
             <span className="relative z-10">Join the Club</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-r from-yellow-600 to-yellow-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </button>
 
           <button
             onClick={() => scrollToSection('events')}
-            className="px-8 py-4 border border-green-500/50 text-green-400 font-semibold rounded-lg bg-green-500/10 backdrop-blur-sm transition-all duration-300 hover:bg-green-500/20 hover:border-green-400 hover:scale-105"
+            className="px-8 py-4 border border-yellow-500/50 text-yellow-400 font-semibold rounded-lg bg-yellow-500/10 backdrop-blur-sm transition-all duration-300 hover:bg-yellow-500/20 hover:border-yellow-400 hover:scale-105"
           >
             Explore Events
           </button>
@@ -91,7 +91,7 @@ export default function Hero() {
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <svg
-            className="w-6 h-6 text-green-400"
+            className="w-6 h-6 text-yellow-400"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"

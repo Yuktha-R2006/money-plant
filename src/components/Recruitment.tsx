@@ -120,32 +120,32 @@ export default function Recruitment() {
   };
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 relative bg-gradient-to-b from-transparent to-green-500/5">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 relative bg-gradient-to-b from-transparent to-yellow-500/5">
       <div className="max-w-4xl mx-auto">
         {/* Section Title */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
               Join Money Plant Club
             </span>
           </h2>
           <p className="text-xl text-gray-300 mb-4">
             Become part of our financial literacy movement
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-green-400 to-green-600 mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto rounded-full"></div>
         </div>
 
         {/* Success Message */}
         {showSuccess && (
-          <div className="mb-8 p-6 bg-green-500/20 border border-green-500/30 rounded-xl backdrop-blur-sm animate-fadeIn">
+          <div className="mb-8 p-6 bg-yellow-500/20 border border-yellow-500/30 rounded-xl backdrop-blur-sm animate-fadeIn">
             <div className="flex items-center">
-              <div className="text-green-400 mr-3">
+              <div className="text-yellow-400 mr-3">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
               <div>
-                <h3 className="text-green-400 font-semibold">Application Submitted Successfully!</h3>
+                <h3 className="text-yellow-400 font-semibold">Application Submitted Successfully!</h3>
                 <p className="text-gray-300">We'll review your application and get back to you soon.</p>
               </div>
             </div>
@@ -153,7 +153,7 @@ export default function Recruitment() {
         )}
 
         {/* Registration Form */}
-        <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-green-500/20">
+        <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-yellow-500/20">
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Personal Information */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -166,8 +166,8 @@ export default function Recruitment() {
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  className={`w-full px-4 py-3 bg-black/50 border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 ${
-                    errors.name ? 'border-red-500' : 'border-green-500/30'
+                  className={`w-full px-4 py-3 bg-black/50 border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300 ${
+                    errors.name ? 'border-red-500' : 'border-yellow-500/30'
                   }`}
                   placeholder="Enter your full name"
                 />
@@ -183,8 +183,8 @@ export default function Recruitment() {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className={`w-full px-4 py-3 bg-black/50 border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 ${
-                    errors.email ? 'border-red-500' : 'border-green-500/30'
+                  className={`w-full px-4 py-3 bg-black/50 border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300 ${
+                    errors.email ? 'border-red-500' : 'border-yellow-500/30'
                   }`}
                   placeholder="your.email@example.com"
                 />
@@ -202,8 +202,8 @@ export default function Recruitment() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleInputChange}
-                  className={`w-full px-4 py-3 bg-black/50 border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 ${
-                    errors.phone ? 'border-red-500' : 'border-green-500/30'
+                  className={`w-full px-4 py-3 bg-black/50 border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300 ${
+                    errors.phone ? 'border-red-500' : 'border-yellow-500/30'
                   }`}
                   placeholder="+91 98765 43210"
                 />
@@ -218,8 +218,8 @@ export default function Recruitment() {
                   name="branch"
                   value={formData.branch}
                   onChange={handleInputChange}
-                  className={`w-full px-4 py-3 bg-black/50 border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 ${
-                    errors.branch ? 'border-red-500' : 'border-green-500/30'
+                  className={`w-full px-4 py-3 bg-black/50 border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300 ${
+                    errors.branch ? 'border-red-500' : 'border-yellow-500/30'
                   }`}
                 >
                   <option value="">Select your branch</option>
@@ -239,8 +239,8 @@ export default function Recruitment() {
                 name="year"
                 value={formData.year}
                 onChange={handleInputChange}
-                className={`w-full px-4 py-3 bg-black/50 border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 ${
-                  errors.year ? 'border-red-500' : 'border-green-500/30'
+                className={`w-full px-4 py-3 bg-black/50 border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300 ${
+                  errors.year ? 'border-red-500' : 'border-yellow-500/30'
                 }`}
               >
                 <option value="">Select your year</option>
@@ -260,13 +260,13 @@ export default function Recruitment() {
                 {interestOptions.map(interest => (
                   <label
                     key={interest}
-                    className="flex items-center p-3 bg-black/50 border border-green-500/30 rounded-lg cursor-pointer hover:bg-green-500/10 transition-all duration-300"
+                    className="flex items-center p-3 bg-black/50 border border-yellow-500/30 rounded-lg cursor-pointer hover:bg-yellow-500/10 transition-all duration-300"
                   >
                     <input
                       type="checkbox"
                       checked={formData.interests.includes(interest)}
                       onChange={() => handleInterestToggle(interest)}
-                      className="mr-2 text-green-500 focus:ring-green-500"
+                      className="mr-2 text-yellow-500 focus:ring-yellow-500"
                     />
                     <span className="text-sm text-gray-300">{interest}</span>
                   </label>
@@ -285,8 +285,8 @@ export default function Recruitment() {
                 value={formData.whyJoin}
                 onChange={handleInputChange}
                 rows={4}
-                className={`w-full px-4 py-3 bg-black/50 border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 resize-none ${
-                  errors.whyJoin ? 'border-red-500' : 'border-green-500/30'
+                className={`w-full px-4 py-3 bg-black/50 border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300 resize-none ${
+                  errors.whyJoin ? 'border-red-500' : 'border-yellow-500/30'
                 }`}
                 placeholder="Tell us about your motivation and what you hope to gain from joining..."
               />
@@ -303,7 +303,7 @@ export default function Recruitment() {
                 value={formData.experience}
                 onChange={handleInputChange}
                 rows={3}
-                className="w-full px-4 py-3 bg-black/50 border border-green-500/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300 resize-none"
+                className="w-full px-4 py-3 bg-black/50 border border-yellow-500/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300 resize-none"
                 placeholder="Any previous experience in finance, trading, or entrepreneurship..."
               />
             </div>
@@ -313,7 +313,7 @@ export default function Recruitment() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold rounded-lg hover:from-green-600 hover:to-green-700 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                className="w-full px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-semibold rounded-lg hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               >
                 {isSubmitting ? (
                   <span className="flex items-center justify-center">
@@ -332,8 +332,8 @@ export default function Recruitment() {
         </div>
 
         {/* Contact Information */}
-        <div className="mt-16 bg-gradient-to-r from-green-500/10 to-green-600/10 rounded-2xl p-8 border border-green-500/20">
-          <h3 className="text-xl font-bold text-green-400 mb-4 text-center">Get in Touch</h3>
+        <div className="mt-16 bg-gradient-to-r from-yellow-500/10 to-yellow-600/10 rounded-2xl p-8 border border-yellow-500/20">
+          <h3 className="text-xl font-bold text-yellow-400 mb-4 text-center">Get in Touch</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <div>
               <p className="text-gray-300">sponsorship@moneyplantclub.com</p>
@@ -348,11 +348,11 @@ export default function Recruitment() {
         </div>
 
         {/* Benefits Section */}
-        <div className="mt-12 bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-green-500/20">
-          <h3 className="text-2xl font-bold text-green-400 mb-6 text-center">Why Join Money Plant Club?</h3>
+        <div className="mt-12 bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-yellow-500/20">
+          <h3 className="text-2xl font-bold text-yellow-400 mb-6 text-center">Why Join Money Plant Club?</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="flex items-start">
-              <div className="w-8 h-8 mr-3 mt-1 text-green-400">
+              <div className="w-8 h-8 mr-3 mt-1 text-yellow-400">
                 <svg fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
@@ -364,7 +364,7 @@ export default function Recruitment() {
             </div>
 
             <div className="flex items-start">
-              <div className="w-8 h-8 mr-3 mt-1 text-green-400">
+              <div className="w-8 h-8 mr-3 mt-1 text-yellow-400">
                 <svg fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
@@ -376,7 +376,7 @@ export default function Recruitment() {
             </div>
 
             <div className="flex items-start">
-              <div className="w-8 h-8 mr-3 mt-1 text-green-400">
+              <div className="w-8 h-8 mr-3 mt-1 text-yellow-400">
                 <svg fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
@@ -388,7 +388,7 @@ export default function Recruitment() {
             </div>
 
             <div className="flex items-start">
-              <div className="w-8 h-8 mr-3 mt-1 text-green-400">
+              <div className="w-8 h-8 mr-3 mt-1 text-yellow-400">
                 <svg fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>

@@ -23,7 +23,7 @@ export function About() {
   return (
     <div className="pt-20">
       <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#d4af37]/5 via-transparent to-[#10b981]/5"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#d4af37]/5 via-transparent to-[#C9A227]/5"></div>
         <div className="absolute top-20 right-10 w-96 h-96 bg-[#d4af37]/10 rounded-full blur-3xl"></div>
 
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
@@ -34,7 +34,7 @@ export function About() {
             className="text-center mb-16"
           >
             <h1 className="text-6xl mb-6 text-[#e8e8ea]">About Us</h1>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#d4af37] to-[#10b981] mx-auto mb-6"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#d4af37] to-[#C9A227] mx-auto mb-6"></div>
             <p className="text-xl text-[#9ca3af] max-w-3xl mx-auto leading-relaxed">
               Empowering the next generation of financially savvy leaders and entrepreneurs
             </p>
@@ -47,7 +47,7 @@ export function About() {
             className="bg-gradient-to-br from-[#141824] to-[#1f2937] rounded-3xl border border-[#d4af37]/30 p-12 mb-16"
           >
             <div className="flex items-start gap-6 mb-8">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#d4af37] to-[#10b981] rounded-xl flex items-center justify-center flex-shrink-0">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#d4af37] to-[#C9A227] rounded-xl flex items-center justify-center flex-shrink-0">
                 <Target className="w-8 h-8 text-[#0a0e1a]" />
               </div>
               <div>
@@ -96,10 +96,10 @@ export function About() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-gradient-to-br from-[#141824] to-[#1f2937] rounded-2xl border border-[#10b981]/30 p-10"
+              className="bg-gradient-to-br from-[#141824] to-[#1f2937] rounded-2xl border border-[#C9A227]/30 p-10"
             >
               <div className="flex items-start gap-6 mb-6">
-                <div className="w-14 h-14 bg-gradient-to-br from-[#10b981] to-[#059669] rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="w-14 h-14 bg-gradient-to-br from-[#C9A227] to-[#A67C00] rounded-xl flex items-center justify-center flex-shrink-0">
                   <Target className="w-7 h-7 text-[#0a0e1a]" />
                 </div>
                 <div>
@@ -136,7 +136,7 @@ export function About() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="bg-gradient-to-br from-[#141824] to-[#1f2937] rounded-xl border border-[#d4af37]/20 p-8 hover:border-[#d4af37] hover:shadow-lg hover:shadow-[#d4af37]/10 transition-all duration-300 group"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#d4af37]/20 to-[#10b981]/20 rounded-lg flex items-center justify-center mb-6 text-[#d4af37] group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#d4af37]/20 to-[#C9A227]/20 rounded-lg flex items-center justify-center mb-6 text-[#d4af37] group-hover:scale-110 transition-transform duration-300">
                     {value.icon}
                   </div>
                   <h3 className="text-xl mb-3 text-[#e8e8ea] group-hover:text-[#d4af37] transition-colors duration-300">
@@ -156,7 +156,7 @@ export function About() {
             className="bg-gradient-to-br from-[#141824] to-[#1f2937] rounded-2xl border border-[#d4af37]/30 p-10"
           >
             <div className="flex items-start gap-6">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#d4af37] to-[#10b981] rounded-xl flex items-center justify-center flex-shrink-0">
+              <div className="w-14 h-14 bg-gradient-to-br from-[#d4af37] to-[#C9A227] rounded-xl flex items-center justify-center flex-shrink-0">
                 <Calendar className="w-7 h-7 text-[#0a0e1a]" />
               </div>
               <div>

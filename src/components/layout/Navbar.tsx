@@ -2,7 +2,6 @@ import { Link, useLocation } from "react-router";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import logoImg from "@/assets/mpc_pic.jpeg";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,9 +25,9 @@ export function Navbar() {
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-3 group">
             <img
-              src={logoImg}
+              src="/logo.png"
               alt="Money Plant Club Logo"
-              className="w-14 h-14 object-contain transform group-hover:scale-110 transition-transform duration-300"
+              className="h-10 w-auto object-contain transform group-hover:scale-110 transition-transform duration-300"
             />
             <span className="text-xl font-semibold text-[#d4af37] tracking-wide">
               Money Plant Club
@@ -48,7 +47,7 @@ export function Navbar() {
                 {isActive(link.path) && (
                   <motion.div
                     layoutId="activeNav"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#d4af37] to-[#10b981]"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#d4af37] to-[#C9A227]"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}

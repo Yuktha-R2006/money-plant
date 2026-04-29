@@ -92,11 +92,11 @@ export default function Team() {
   const getRoleColor = (role: string) => {
     if (role.includes('President')) return 'from-purple-500 to-pink-500';
     if (role.includes('Coordinator')) return 'from-blue-500 to-cyan-500';
-    if (role.includes('Technical')) return 'from-green-500 to-teal-500';
+    if (role.includes('Technical')) return 'from-yellow-500 to-yellow-600';
     if (role.includes('Events')) return 'from-orange-500 to-red-500';
     if (role.includes('Marketing')) return 'from-pink-500 to-purple-500';
     if (role.includes('Finance')) return 'from-yellow-500 to-orange-500';
-    return 'from-green-500 to-green-600';
+    return 'from-yellow-500 to-yellow-600';
   };
 
   const handleSocialClick = (platform: string, url: string) => {
@@ -110,14 +110,14 @@ export default function Team() {
         {/* Section Title */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
               Meet Our Team
             </span>
           </h2>
           <p className="text-xl text-gray-300 mb-4">
             The passionate individuals driving financial literacy forward
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-green-400 to-green-600 mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto rounded-full"></div>
         </div>
 
         {/* Team Grid */}
@@ -130,7 +130,7 @@ export default function Team() {
               onMouseLeave={() => setHoveredMember(null)}
             >
               {/* Glassmorphism Card */}
-              <div className="relative professional-card hover:bg-green-500/10 hover:shadow-green-500/20 hover:shadow-xl">
+              <div className="relative professional-card hover:bg-yellow-500/10 hover:shadow-yellow-500/20 hover:shadow-xl">
                 
                 {/* Hover Glow Effect */}
                 <div className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br ${getRoleColor(member.role)} blur-xl`}></div>
@@ -138,20 +138,20 @@ export default function Team() {
                 {/* Profile Image */}
                 <div className="relative z-10 text-center mb-6">
                   <div className="relative inline-block avatar-container">
-                    <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-green-500/20 to-green-600/10 flex items-center justify-center border-2 border-green-500/30 group-hover:scale-110 transition-transform duration-300 overflow-hidden avatar-image">
+                    <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-yellow-500/20 to-yellow-600/10 flex items-center justify-center border-2 border-yellow-500/30 group-hover:scale-110 transition-transform duration-300 overflow-hidden avatar-image">
                       {/* Neutral placeholder silhouette */}
-                      <svg className="w-16 h-16 text-green-400/60" fill="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-16 h-16 text-yellow-400/60" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
                       </svg>
                     </div>
                     {/* Animated Ring */}
-                    <div className="absolute inset-0 rounded-full border-2 border-green-400 opacity-0 group-hover:opacity-100 group-hover:animate-ping"></div>
+                    <div className="absolute inset-0 rounded-full border-2 border-yellow-400 opacity-0 group-hover:opacity-100 group-hover:animate-ping"></div>
                   </div>
                 </div>
 
                 {/* Member Info */}
                 <div className="relative z-10 text-center">
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-green-400 transition-colors duration-300">
+                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors duration-300">
                     {member.name}
                   </h3>
                   
@@ -196,7 +196,7 @@ export default function Team() {
                     {member.social.email && (
                       <button
                         onClick={() => handleSocialClick('Email', `mailto:${member.social.email}`)}
-                        className="w-10 h-10 rounded-full bg-green-500/20 border border-green-500/30 flex items-center justify-center text-green-400 hover:bg-green-500/30 transition-colors duration-300"
+                        className="w-10 h-10 rounded-full bg-yellow-500/20 border border-yellow-500/30 flex items-center justify-center text-yellow-400 hover:bg-yellow-500/30 transition-colors duration-300"
                       >
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -208,29 +208,29 @@ export default function Team() {
               </div>
 
               {/* Card Tilt Effect */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-green-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-yellow-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
             </div>
           ))}
         </div>
 
         {/* Team Stats */}
-        <div className="mt-16 bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-green-500/20">
-          <h3 className="text-2xl font-bold text-green-400 mb-6 text-center">Our Team Strength</h3>
+        <div className="mt-16 bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-yellow-500/20">
+          <h3 className="text-2xl font-bold text-yellow-400 mb-6 text-center">Our Team Strength</h3>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="text-center">
-              <div className="text-3xl font-bold text-green-400 mb-2">6+</div>
+              <div className="text-3xl font-bold text-yellow-400 mb-2">6+</div>
               <div className="text-gray-300">Core Members</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-green-400 mb-2">50+</div>
+              <div className="text-3xl font-bold text-yellow-400 mb-2">50+</div>
               <div className="text-gray-300">Active Volunteers</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-green-400 mb-2">10+</div>
+              <div className="text-3xl font-bold text-yellow-400 mb-2">10+</div>
               <div className="text-gray-300">Events Organized</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-green-400 mb-2">100%</div>
+              <div className="text-3xl font-bold text-yellow-400 mb-2">100%</div>
               <div className="text-gray-300">Dedicated Team</div>
             </div>
           </div>
@@ -238,11 +238,11 @@ export default function Team() {
 
         {/* Join Team CTA */}
         <div className="mt-12 text-center">
-          <h3 className="text-2xl font-bold text-green-400 mb-4">Want to Join Our Team?</h3>
+          <h3 className="text-2xl font-bold text-yellow-400 mb-4">Want to Join Our Team?</h3>
           <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
             We're always looking for passionate individuals who want to make a difference in financial education.
           </p>
-          <button className="px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold rounded-lg hover:from-green-600 hover:to-green-700 transition-all duration-300 transform hover:scale-105">
+          <button className="px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-semibold rounded-lg hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105">
             Apply to Join Team
           </button>
         </div>

@@ -2,52 +2,61 @@
 
 :root {
   --font-size: 16px;
-  --background: #0a0e1a;
+  --background: #0a0a0a;
   --foreground: #e8e8ea;
-  --card: #141824;
+  --card: #111111;
   --card-foreground: #e8e8ea;
-  --popover: #141824;
+  --popover: #111111;
   --popover-foreground: #e8e8ea;
-  --primary: #d4af37;
-  --primary-foreground: #0a0e1a;
-  --secondary: #10b981;
-  --secondary-foreground: #0a0e1a;
+  --primary: #FFD700;
+  --primary-foreground: #0a0a0a;
+  --secondary: #C9A227;
+  --secondary-foreground: #0a0a0a;
   --muted: #1f2937;
   --muted-foreground: #9ca3af;
-  --accent: #d4af37;
-  --accent-foreground: #0a0e1a;
+  --accent: #FFD700;
+  --accent-foreground: #0a0a0a;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: rgba(212, 175, 55, 0.15);
-  --input: rgba(212, 175, 55, 0.1);
+  --border: rgba(255, 215, 0, 0.15);
+  --input: rgba(255, 215, 0, 0.1);
   --input-background: #1f2937;
   --switch-background: #374151;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --ring: #d4af37;
-  --chart-1: #d4af37;
-  --chart-2: #10b981;
-  --chart-3: #3b82f6;
+  --ring: #FFD700;
+  --chart-1: #FFD700;
+  --chart-2: #C9A227;
+  --chart-3: #A67C00;
   --chart-4: #8b5cf6;
   --chart-5: #ec4899;
   --radius: 0.5rem;
-  --sidebar: #141824;
+  --sidebar: #111111;
   --sidebar-foreground: #e8e8ea;
-  --sidebar-primary: #d4af37;
-  --sidebar-primary-foreground: #0a0e1a;
+  --sidebar-primary: #FFD700;
+  --sidebar-primary-foreground: #0a0a0a;
   --sidebar-accent: #1f2937;
   --sidebar-accent-foreground: #e8e8ea;
-  --sidebar-border: rgba(212, 175, 55, 0.15);
-  --sidebar-ring: #d4af37;
-  --gold: #d4af37;
-  --gold-light: #f4e5b8;
-  --gold-dark: #aa8a2b;
-  --green: #10b981;
-  --green-light: #6ee7b7;
-  --green-dark: #059669;
-  --navy: #0a0e1a;
-  --navy-light: #141824;
-  --navy-lighter: #1f2937;
+  --sidebar-border: rgba(255, 215, 0, 0.15);
+  --sidebar-ring: #FFD700;
+  
+  /* Premium Gold Color System */
+  --gold-primary: #FFD700;
+  --gold-secondary: #C9A227;
+  --gold-dark: #A67C00;
+  --gold-glow: rgba(255, 215, 0, 0.25);
+  --gold-light: #F4E5B8;
+  --gold-medium: #D4AF37;
+  
+  /* Background Colors */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #111111;
+  --bg-tertiary: #1a1a1a;
+  
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: #e8e8ea;
+  --text-muted: #9ca3af;
 }
 
 .dark {

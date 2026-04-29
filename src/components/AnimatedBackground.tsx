@@ -78,7 +78,7 @@ export default function AnimatedBackground() {
         const currentX = line.startX + (line.endX - line.startX) * line.progress;
         const currentY = line.startY + (line.endY - line.startY) * line.progress;
 
-        ctx.strokeStyle = `rgba(34, 197, 94, ${0.3 - line.progress * 0.2})`;
+        ctx.strokeStyle = `rgba(255, 215, 0, ${0.3 - line.progress * 0.2})`;
         ctx.lineWidth = 1;
         ctx.beginPath();
         ctx.moveTo(line.startX, line.startY);
@@ -111,7 +111,7 @@ export default function AnimatedBackground() {
         if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
 
         // Draw particle
-        ctx.fillStyle = `rgba(34, 197, 94, ${particle.opacity})`;
+        ctx.fillStyle = `rgba(255, 215, 0, ${particle.opacity})`;
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
         ctx.fill();
@@ -125,7 +125,7 @@ export default function AnimatedBackground() {
           const distance = Math.sqrt(dx * dx + dy * dy);
           
           if (distance < 150) {
-            ctx.strokeStyle = `rgba(34, 197, 94, ${0.1 * (1 - distance / 150)})`;
+            ctx.strokeStyle = `rgba(201, 162, 39, ${0.1 * (1 - distance / 150)})`;
             ctx.lineWidth = 0.5;
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);

@@ -48,7 +48,7 @@ export function Team() {
   return (
     <div className="pt-20">
       <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#d4af37]/5 via-transparent to-[#10b981]/5"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#d4af37]/5 via-transparent to-[#C9A227]/5"></div>
         <div className="absolute top-20 right-10 w-96 h-96 bg-[#d4af37]/10 rounded-full blur-3xl"></div>
 
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
@@ -59,7 +59,7 @@ export function Team() {
             className="text-center mb-16"
           >
             <h1 className="text-6xl mb-6 text-[#e8e8ea]">Our Team</h1>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#d4af37] to-[#10b981] mx-auto mb-6"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#d4af37] to-[#C9A227] mx-auto mb-6"></div>
             <p className="text-xl text-[#9ca3af] max-w-3xl mx-auto leading-relaxed">
               Meet the dedicated individuals driving financial excellence and innovation
             </p>
@@ -118,8 +118,8 @@ export function Team() {
                   className="group"
                 >
                   <div className="bg-gradient-to-br from-[#141824] to-[#1f2937] rounded-2xl border border-[#d4af37]/20 overflow-hidden hover:border-[#d4af37] hover:shadow-xl hover:shadow-[#d4af37]/10 transition-all duration-500 h-full">
-                    <div className="bg-gradient-to-r from-[#d4af37]/20 to-[#10b981]/20 p-8 flex items-center justify-center">
-                      <div className="w-32 h-32 bg-gradient-to-br from-[#d4af37] to-[#10b981] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div className="bg-gradient-to-r from-[#d4af37]/20 to-[#C9A227]/20 p-8 flex items-center justify-center">
+                      <div className="w-32 h-32 bg-gradient-to-br from-[#d4af37] to-[#C9A227] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <User className="w-16 h-16 text-[#0a0e1a]" />
                       </div>
                     </div>

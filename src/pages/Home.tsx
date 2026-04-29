@@ -63,9 +63,9 @@ export function Home() {
   return (
     <div className="pt-20">
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#d4af37]/5 via-transparent to-[#10b981]/5"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#d4af37]/5 via-transparent to-[#C9A227]/5"></div>
         <div className="absolute top-20 right-10 w-96 h-96 bg-[#d4af37]/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-10 w-96 h-96 bg-[#10b981]/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-[#C9A227]/10 rounded-full blur-3xl"></div>
 
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -119,7 +119,7 @@ export function Home() {
               className="relative flex items-center justify-center"
             >
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#d4af37]/30 to-[#10b981]/30 rounded-full blur-3xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#d4af37]/30 to-[#C9A227]/30 rounded-full blur-3xl"></div>
                 <img
                   src={logoImg}
                   alt="Money Plant Club Logo"
@@ -141,7 +141,7 @@ export function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-5xl mb-4 text-[#e8e8ea]">About Our Club</h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#d4af37] to-[#10b981] mx-auto mb-6"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#d4af37] to-[#C9A227] mx-auto mb-6"></div>
             <p className="text-xl text-[#9ca3af] max-w-3xl mx-auto leading-relaxed">
               Money Plant Club is a premier student-led organization dedicated to cultivating
               financial intelligence and entrepreneurial excellence. We provide practical knowledge
@@ -162,7 +162,7 @@ export function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-5xl mb-4 text-[#e8e8ea]">Featured Event</h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#d4af37] to-[#10b981] mx-auto"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#d4af37] to-[#C9A227] mx-auto"></div>
           </motion.div>
 
           <motion.div
@@ -201,7 +201,7 @@ export function Home() {
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </div>
-              <div className="bg-gradient-to-br from-[#d4af37]/20 to-[#10b981]/20 flex items-center justify-center p-12">
+              <div className="bg-gradient-to-br from-[#d4af37]/20 to-[#C9A227]/20 flex items-center justify-center p-12">
                 <div className="text-center">
                   <TrendingUp className="w-32 h-32 text-[#d4af37] mx-auto mb-4" />
                   <p className="text-2xl text-[#d4af37] italic">Learn. Trade. Succeed.</p>
@@ -222,7 +222,7 @@ export function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-5xl mb-4 text-[#e8e8ea]">Upcoming Events</h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#d4af37] to-[#10b981] mx-auto"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#d4af37] to-[#C9A227] mx-auto"></div>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -235,7 +235,7 @@ export function Home() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="bg-[#141824] rounded-xl border border-[#d4af37]/20 p-6 hover:border-[#d4af37] hover:shadow-lg hover:shadow-[#d4af37]/10 transition-all duration-300 group"
               >
-                <span className="inline-block px-3 py-1 bg-[#10b981]/20 text-[#10b981] rounded-full text-sm mb-4">
+                <span className="inline-block px-3 py-1 bg-[#C9A227]/20 text-[#C9A227] rounded-full text-sm mb-4">
                   {event.category}
                 </span>
                 <h4 className="text-xl mb-3 text-[#e8e8ea] group-hover:text-[#d4af37] transition-colors duration-300">
@@ -261,7 +261,7 @@ export function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-5xl mb-4 text-[#e8e8ea]">What You'll Learn</h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#d4af37] to-[#10b981] mx-auto mb-6"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#d4af37] to-[#C9A227] mx-auto mb-6"></div>
             <p className="text-xl text-[#9ca3af] max-w-3xl mx-auto">
               Comprehensive financial education covering all aspects of wealth creation and
               management
@@ -279,7 +279,7 @@ export function Home() {
                 className="group"
               >
                 <div className="bg-gradient-to-br from-[#141824] to-[#1f2937] rounded-xl border border-[#d4af37]/20 p-8 hover:border-[#d4af37] hover:shadow-lg hover:shadow-[#d4af37]/10 transition-all duration-300 h-full">
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#d4af37]/20 to-[#10b981]/20 rounded-lg flex items-center justify-center mb-6 text-[#d4af37] group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#d4af37]/20 to-[#C9A227]/20 rounded-lg flex items-center justify-center mb-6 text-[#d4af37] group-hover:scale-110 transition-transform duration-300">
                     {area.icon}
                   </div>
                   <h4 className="text-xl mb-3 text-[#e8e8ea] group-hover:text-[#d4af37] transition-colors duration-300">
@@ -303,7 +303,7 @@ export function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-5xl mb-4 text-[#e8e8ea]">Get In Touch</h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#d4af37] to-[#10b981] mx-auto mb-6"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#d4af37] to-[#C9A227] mx-auto mb-6"></div>
             <p className="text-xl text-[#9ca3af] max-w-3xl mx-auto leading-relaxed">
               Join our community and start your journey towards financial excellence
             </p>
@@ -324,18 +324,18 @@ export function Home() {
                     href="https://wa.me/911234567890"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 bg-[#1f2937] hover:bg-[#10b981]/10 border border-[#d4af37]/20 hover:border-[#10b981] rounded-lg transition-all duration-300 group"
+                    className="flex items-center gap-4 p-4 bg-[#1f2937] hover:bg-[#C9A227]/10 border border-[#d4af37]/20 hover:border-[#C9A227] rounded-lg transition-all duration-300 group"
                   >
-                    <div className="w-12 h-12 bg-[#10b981]/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                      <MessageCircle className="w-6 h-6 text-[#10b981]" />
+                    <div className="w-12 h-12 bg-[#C9A227]/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      <MessageCircle className="w-6 h-6 text-[#C9A227]" />
                     </div>
                     <div className="flex-grow text-left">
                       <p className="text-sm text-[#9ca3af] mb-1">WhatsApp</p>
-                      <p className="text-[#e8e8ea] group-hover:text-[#10b981] transition-colors duration-300">
+                      <p className="text-[#e8e8ea] group-hover:text-[#C9A227] transition-colors duration-300">
                         +91 123 456 7890
                       </p>
                     </div>
-                    <ArrowRight className="w-5 h-5 text-[#9ca3af] group-hover:text-[#10b981] group-hover:translate-x-1 transition-all duration-300" />
+                    <ArrowRight className="w-5 h-5 text-[#9ca3af] group-hover:text-[#C9A227] group-hover:translate-x-1 transition-all duration-300" />
                   </a>
 
                   <a
@@ -380,7 +380,7 @@ export function Home() {
               transition={{ duration: 0.6 }}
               className="space-y-6"
             >
-              <div className="bg-gradient-to-br from-[#141824] to-[#1f2937] rounded-2xl border border-[#10b981]/30 p-8">
+              <div className="bg-gradient-to-br from-[#141824] to-[#1f2937] rounded-2xl border border-[#C9A227]/30 p-8">
                 <h3 className="text-2xl mb-6 text-[#e8e8ea]">Connect With Us</h3>
                 <div className="grid grid-cols-2 gap-4 mb-8">
                   <a
@@ -427,7 +427,7 @@ export function Home() {
                   </a>
                 </div>
 
-                <div className="p-6 bg-gradient-to-br from-[#d4af37]/10 to-[#10b981]/10 rounded-xl border border-[#d4af37]/30">
+                <div className="p-6 bg-gradient-to-br from-[#d4af37]/10 to-[#C9A227]/10 rounded-xl border border-[#d4af37]/30">
                   <h4 className="text-lg mb-3 text-[#e8e8ea]">Office Location</h4>
                   <p className="text-[#9ca3af] leading-relaxed">
                     <MapPin className="w-4 h-4 inline mr-2 text-[#d4af37]" />

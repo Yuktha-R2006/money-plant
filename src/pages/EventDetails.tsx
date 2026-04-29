@@ -81,7 +81,7 @@ export function EventDetails() {
       attendees: "200+",
       category: "Competition",
       icon: <Lightbulb className="w-12 h-12" />,
-      gradient: "from-[#10b981] to-[#059669]",
+      gradient: "from-[#C9A227] to-[#A67C00]",
       googleFormUrl: "https://forms.google.com/example-hackonomics",
       registrationOpen: true,
       description:
@@ -135,7 +135,7 @@ export function EventDetails() {
   return (
     <div className="pt-20">
       <section className="relative py-12 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#d4af37]/5 via-transparent to-[#10b981]/5"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#d4af37]/5 via-transparent to-[#C9A227]/5"></div>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <Link
             to="/events"
@@ -216,7 +216,7 @@ export function EventDetails() {
                 <div className="space-y-4">
                   {event.highlights.map((highlight: string, index: number) => (
                     <div key={index} className="flex items-start gap-4 group">
-                      <CheckCircle className="w-6 h-6 text-[#10b981] flex-shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300" />
+                      <CheckCircle className="w-6 h-6 text-[#C9A227] flex-shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300" />
                       <p className="text-[#9ca3af] leading-relaxed">{highlight}</p>
                     </div>
                   ))}
@@ -236,7 +236,7 @@ export function EventDetails() {
                       className="bg-gradient-to-br from-[#141824] to-[#1f2937] rounded-xl border border-[#d4af37]/20 p-6 hover:border-[#d4af37] transition-all duration-300"
                     >
                       <div className="flex items-start gap-4">
-                        <div className="w-16 h-16 bg-gradient-to-br from-[#d4af37] to-[#10b981] rounded-full flex items-center justify-center flex-shrink-0">
+                        <div className="w-16 h-16 bg-gradient-to-br from-[#d4af37] to-[#C9A227] rounded-full flex items-center justify-center flex-shrink-0">
                           <User className="w-8 h-8 text-[#0a0e1a]" />
                         </div>
                         <div className="flex-grow">
@@ -266,7 +266,7 @@ export function EventDetails() {
                     <span
                       className={`px-3 py-1 rounded-full text-sm ${
                         event.registrationOpen
-                          ? "bg-[#10b981]/20 text-[#10b981]"
+                          ? "bg-[#C9A227]/20 text-[#C9A227]"
                           : "bg-red-500/20 text-red-400"
                       }`}
                     >
@@ -296,7 +296,7 @@ export function EventDetails() {
                   </p>
                 </div>
 
-                <div className="mt-8 bg-gradient-to-br from-[#141824] to-[#1f2937] rounded-2xl border border-[#10b981]/30 p-8">
+                <div className="mt-8 bg-gradient-to-br from-[#141824] to-[#1f2937] rounded-2xl border border-[#C9A227]/30 p-8">
                   <h3 className="text-xl mb-4 text-[#e8e8ea]">Share This Event</h3>
                   <div className="flex gap-3">
                     <button className="flex-1 px-4 py-2 bg-[#1f2937] hover:bg-[#d4af37]/10 text-[#9ca3af] hover:text-[#d4af37] rounded-lg border border-[#d4af37]/20 hover:border-[#d4af37] transition-all duration-300">
