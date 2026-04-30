@@ -34,7 +34,7 @@ export default function AnimatedBackground() {
       });
     }
 
-    // Grid lines
+    // Grid lines - exclude long vertical lines
     const gridLines: Array<{
       startX: number;
       startY: number;
@@ -45,11 +45,21 @@ export default function AnimatedBackground() {
     }> = [];
 
     for (let i = 0; i < 5; i++) {
+      let startX, startY, endX, endY;
+      
+      // Generate non-horizontal and non-vertical grid lines (diagonal only)
+      do {
+        startX = Math.random() * canvas.width;
+        startY = Math.random() * canvas.height;
+        endX = Math.random() * canvas.width;
+        endY = Math.random() * canvas.height;
+      } while (Math.abs(endX - startX) < 50 || Math.abs(endY - startY) < 50); // Ensure both horizontal and vertical distance > 50px
+      
       gridLines.push({
-        startX: Math.random() * canvas.width,
-        startY: 0,
-        endX: Math.random() * canvas.width,
-        endY: canvas.height,
+        startX,
+        startY,
+        endX,
+        endY,
         progress: 0,
         speed: Math.random() * 0.005 + 0.002
       });
@@ -117,14 +127,15 @@ export default function AnimatedBackground() {
         ctx.fill();
       });
 
-      // Draw connections between nearby particles
+      // Draw connections between nearby particles - exclude long vertical lines
       particles.forEach((p1, i) => {
         particles.slice(i + 1).forEach(p2 => {
           const dx = p1.x - p2.x;
           const dy = p1.y - p2.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
           
-          if (distance < 150) {
+          // Only draw connections if distance < 150 AND not a long vertical line
+          if (distance < 150 && Math.abs(dx) > 20) { // Ensure horizontal distance > 20px to avoid vertical lines
             ctx.strokeStyle = `rgba(201, 162, 39, ${0.1 * (1 - distance / 150)})`;
             ctx.lineWidth = 0.5;
             ctx.beginPath();
