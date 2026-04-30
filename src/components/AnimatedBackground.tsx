@@ -23,47 +23,17 @@ export default function AnimatedBackground() {
     }> = [];
 
     // Create particles
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 80; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4,
         size: Math.random() * 2 + 1,
         opacity: Math.random() * 0.5 + 0.2
       });
     }
 
-    // Grid lines - exclude long vertical lines
-    const gridLines: Array<{
-      startX: number;
-      startY: number;
-      endX: number;
-      endY: number;
-      progress: number;
-      speed: number;
-    }> = [];
-
-    for (let i = 0; i < 5; i++) {
-      let startX, startY, endX, endY;
-      
-      // Generate non-horizontal and non-vertical grid lines (diagonal only)
-      do {
-        startX = Math.random() * canvas.width;
-        startY = Math.random() * canvas.height;
-        endX = Math.random() * canvas.width;
-        endY = Math.random() * canvas.height;
-      } while (Math.abs(endX - startX) < 50 || Math.abs(endY - startY) < 50); // Ensure both horizontal and vertical distance > 50px
-      
-      gridLines.push({
-        startX,
-        startY,
-        endX,
-        endY,
-        progress: 0,
-        speed: Math.random() * 0.005 + 0.002
-      });
-    }
 
     let animationId: number;
     let mouseX = 0;
@@ -79,22 +49,6 @@ export default function AnimatedBackground() {
     const animate = () => {
       ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      // Draw grid lines
-      gridLines.forEach(line => {
-        line.progress += line.speed;
-        if (line.progress > 1) line.progress = 0;
-
-        const currentX = line.startX + (line.endX - line.startX) * line.progress;
-        const currentY = line.startY + (line.endY - line.startY) * line.progress;
-
-        ctx.strokeStyle = `rgba(255, 215, 0, ${0.3 - line.progress * 0.2})`;
-        ctx.lineWidth = 1;
-        ctx.beginPath();
-        ctx.moveTo(line.startX, line.startY);
-        ctx.lineTo(currentX, currentY);
-        ctx.stroke();
-      });
 
       // Draw and update particles
       particles.forEach(particle => {
@@ -127,16 +81,15 @@ export default function AnimatedBackground() {
         ctx.fill();
       });
 
-      // Draw connections between nearby particles - exclude long vertical lines
+      // Draw connections between nearby particles
       particles.forEach((p1, i) => {
         particles.slice(i + 1).forEach(p2 => {
           const dx = p1.x - p2.x;
           const dy = p1.y - p2.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
           
-          // Only draw connections if distance < 150 AND not a long vertical line
-          if (distance < 150 && Math.abs(dx) > 20) { // Ensure horizontal distance > 20px to avoid vertical lines
-            ctx.strokeStyle = `rgba(201, 162, 39, ${0.1 * (1 - distance / 150)})`;
+          if (distance < 100) {
+            ctx.strokeStyle = `rgba(201, 162, 39, ${0.15 * (1 - distance / 100)})`;
             ctx.lineWidth = 0.5;
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
