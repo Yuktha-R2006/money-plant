@@ -25,9 +25,9 @@ export function Navbar() {
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-3 group">
             <img
-              src="/logo.png"
+              src="/logo.jpeg"
               alt="Money Plant Club Logo"
-              className="h-10 w-auto object-contain transform group-hover:scale-110 transition-transform duration-300"
+              className="h-8 w-auto object-contain transform group-hover:scale-110 transition-transform duration-300"
             />
             <span className="text-xl font-semibold text-[#d4af37] tracking-wide">
               Money Plant Club

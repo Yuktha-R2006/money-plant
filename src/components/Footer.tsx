@@ -21,10 +21,12 @@ export default function Footer() {
           <div className="space-y-4">
             {/* Logo/Icon */}
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-yellow-500/20 to-yellow-600/10 rounded-lg flex items-center justify-center border border-yellow-500/30">
-                <svg className="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                </svg>
+              <div className="w-8 h-8 rounded-full overflow-hidden border border-yellow-500/30">
+                <img
+                  src="/logo.jpeg"
+                  alt="Money Plant Club Logo"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-xl font-bold text-white">Money Plant Club</h3>
             </div>

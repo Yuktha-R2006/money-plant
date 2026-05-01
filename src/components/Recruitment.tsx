@@ -120,7 +120,7 @@ export default function Recruitment() {
   };
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 relative bg-gradient-to-b from-transparent to-yellow-500/5">
+    <section id="join" className="py-20 px-4 sm:px-6 lg:px-8 relative bg-gradient-to-b from-transparent to-yellow-500/5">
       <div className="max-w-4xl mx-auto">
         {/* Section Title */}
         <div className="text-center mb-16">

@@ -235,9 +235,9 @@ export default function Team() {
           <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
             We're always looking for passionate individuals who want to make a difference in financial education.
           </p>
-          <button className="px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-semibold rounded-lg hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105">
+          <a href="#join" className="inline-block px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-semibold rounded-lg hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105">
             Apply to Join Team
-          </button>
+          </a>
         </div>
       </div>
     </section>
