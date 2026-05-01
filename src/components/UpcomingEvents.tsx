@@ -14,12 +14,12 @@ export default function UpcomingEvents() {
   const [events] = useState<Event[]>([
     {
       id: 1,
-      title: "Investment Fundamentals Workshop",
-      date: "2024-05-15",
+      title: "Stock Market Investment Fundamentals Workshop",
+      date: "2024-05-7",
       time: "2:00 PM - 4:00 PM",
       description: "Learn the basics of stock market investing, portfolio diversification, and risk management strategies.",
       category: "Workshop",
-      registrationLink: ""
+      registrationLink: "https://forms.gle/eK1dx2ahcF1FqyX76"
     },
     {
       id: 2,
