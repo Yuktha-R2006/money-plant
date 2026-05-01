@@ -55,7 +55,7 @@ export default function Team() {
     {
       id: 4,
       name: "Yogendra Naik",
-      role: "Events Manager",
+      role: "Technical Head",
       image: "events",
       bio: "Planning and executing successful club events",
       social: {
