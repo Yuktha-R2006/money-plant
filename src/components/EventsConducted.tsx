@@ -20,7 +20,7 @@ export default function EventsConducted() {
     {
       id: 1,
       title: "WealthWise – Trading Workshop",
-      date: "2024-03-15",
+      date: "2025-12-19",
       description: "A comprehensive workshop covering the fundamentals of trading and market analysis.",
       highlights: [
         "Basics of trading and market mechanics",
@@ -34,7 +34,7 @@ export default function EventsConducted() {
     {
       id: 2,
       title: "Hackonomics 2026 – Ideathon",
-      date: "2024-02-20",
+      date: "2026-03-13",
       description: "A massive ideathon bringing together innovative minds from various domains.",
       highlights: [
         "200+ participants from multiple colleges",
@@ -43,7 +43,7 @@ export default function EventsConducted() {
         "Pitching and presentation skills development"
       ],
       participants: 200,
-      prizePool: "₹7000",
+      prizePool: "₹7000+",
       domains: ["AI", "Blockchain", "Robotics", "IoT", "FinTech"],
       images: ["/images/event2.png", "/images/event2(1).png"]
     }
@@ -51,10 +51,10 @@ export default function EventsConducted() {
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', { 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
     });
   };
 
@@ -102,15 +102,13 @@ export default function EventsConducted() {
             {events.map((event, index) => (
               <div
                 key={event.id}
-                className={`relative flex items-center ${
-                  index % 2 === 0 ? 'justify-start' : 'justify-end'
-                }`}
+                className={`relative flex items-center ${index % 2 === 0 ? 'justify-start' : 'justify-end'
+                  }`}
               >
                 {/* Event Card */}
                 <div
-                  className={`w-full md:w-5/12 bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-yellow-500/20 hover:bg-yellow-500/10 transition-all duration-300 hover:scale-105 cursor-pointer ${
-                    index % 2 === 0 ? 'md:mr-auto md:ml-8' : 'md:ml-auto md:mr-8'
-                  }`}
+                  className={`w-full md:w-5/12 bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-yellow-500/20 hover:bg-yellow-500/10 transition-all duration-300 hover:scale-105 cursor-pointer ${index % 2 === 0 ? 'md:mr-auto md:ml-8' : 'md:ml-auto md:mr-8'
+                    }`}
                   onClick={() => setSelectedEvent(selectedEvent === event.id ? null : event.id)}
                 >
                   {/* Timeline Dot */}
@@ -219,13 +217,13 @@ export default function EventsConducted() {
                       </button>
                     )}
 
-                    
+
                     {/* Image Display */}
-                     <img
+                    <img
                       src={event.images[currentIndex]}
                       alt={event.title}
-                     className="w-full h-full object-cover"
-                     />
+                      className="w-full h-full object-cover"
+                    />
 
                     {/* Right Navigation */}
                     {event.images.length > 1 && (
@@ -245,9 +243,8 @@ export default function EventsConducted() {
                         {event.images.map((_, idx) => (
                           <div
                             key={idx}
-                            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                              idx === currentIndex ? 'bg-yellow-400' : 'bg-gray-500'
-                            }`}
+                            className={`w-2 h-2 rounded-full transition-all duration-300 ${idx === currentIndex ? 'bg-yellow-400' : 'bg-gray-500'
+                              }`}
                           />
                         ))}
                       </div>

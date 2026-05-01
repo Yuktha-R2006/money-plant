@@ -27,25 +27,25 @@ export function Events() {
     {
       id: "wealthwise",
       title: "WealthWise – Trading Workshop",
-      date: "April 28, 2026",
-      time: "2:00 PM - 5:00 PM",
-      location: "Main Auditorium",
+      date: "December 19, 2025",
+      time: "9:00 AM to 12:30 PM",
+      location: "BSN Auditorium",
       category: "Workshop",
       description:
         "Master stock market trading with industry experts. Learn technical analysis, chart patterns, and risk management strategies.",
-      registrationLink: "https://forms.google.com/example-wealthwise",
+      registrationLink: "",
       icon: <TrendingUp className="w-6 h-6" />,
       gradient: "from-[#d4af37] to-[#aa8a2b]",
     },
     {
       id: "hackonomics",
       title: "Hackonomics 2026 – Ideathon",
-      date: "May 12, 2026",
+      date: "May 13, 2026",
       time: "10:00 AM - 6:00 PM",
-      location: "Innovation Lab",
+      location: "APJ Abdul Kalam Auditorium, Lab Block",
       category: "Competition",
       description:
-        "24-hour ideathon focused on innovative fintech solutions. Compete, collaborate, and create the future of finance.",
+        "8 hours ideathon focused on innovative fintech solutions. Compete, collaborate, and create the future of finance.",
       registrationLink: "",
       icon: <Lightbulb className="w-6 h-6" />,
       gradient: "from-[#C9A227] to-[#A67C00]",
@@ -90,11 +90,10 @@ export function Events() {
                           {event.category}
                         </span>
                         <span
-                          className={`px-3 py-1 rounded-full text-sm backdrop-blur-sm ${
-                            event.registrationLink && event.registrationLink.trim() !== ''
+                          className={`px-3 py-1 rounded-full text-sm backdrop-blur-sm ${event.registrationLink && event.registrationLink.trim() !== ''
                               ? "bg-[#C9A227]/30 text-white"
                               : "bg-red-500/30 text-white"
-                          }`}
+                            }`}
                         >
                           {event.registrationLink && event.registrationLink.trim() !== '' ? "Registrations Open" : "Registrations Closed"}
                         </span>

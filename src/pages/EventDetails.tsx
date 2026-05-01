@@ -36,14 +36,14 @@ export function EventDetails() {
   > = {
     wealthwise: {
       title: "WealthWise – Trading Workshop",
-      date: "April 28, 2026",
-      time: "2:00 PM - 5:00 PM",
-      location: "Main Auditorium, Building A",
+      date: "December 19,2025",
+      time: "9:30 AM - 12:30 PM",
+      location: "BSN Auditorium",
       attendees: "150+",
-      category: "Workshop",
+      category: "Workshop+Inaguration",
       icon: <TrendingUp className="w-12 h-12" />,
       gradient: "from-[#d4af37] to-[#aa8a2b]",
-      registrationLink: "https://forms.google.com/example-wealthwise",
+      registrationLink: "",
       description:
         "An intensive 3-hour workshop designed to transform beginners into confident traders. Learn from industry veterans who have navigated bull and bear markets successfully.",
       longDescription:
@@ -58,29 +58,23 @@ export function EventDetails() {
       ],
       speakers: [
         {
-          name: "Rajesh Kumar",
-          role: "Senior Portfolio Manager",
-          company: "Goldman Sachs India",
-          bio: "15+ years of experience in equity trading and portfolio management",
-        },
-        {
-          name: "Priya Sharma",
-          role: "Technical Analyst",
-          company: "HDFC Securities",
-          bio: "Expert in chart patterns and algorithmic trading strategies",
-        },
+          name: "Avneesh Asija",
+          role: "Founder MD",
+          company: "TRADESTEADY",
+          bio: "10+ years of experience in equity trading and portfolio management",
+        }
       ],
     },
     hackonomics: {
       title: "Hackonomics 2026 – Ideathon",
-      date: "May 12, 2026",
+      date: "March 13, 2026",
       time: "10:00 AM - 6:00 PM",
-      location: "Innovation Lab, Campus Center",
+      location: "APJ Abdul Kalam Auditorium,Lab Block",
       attendees: "200+",
       category: "Competition",
       icon: <Lightbulb className="w-12 h-12" />,
       gradient: "from-[#C9A227] to-[#A67C00]",
-      registrationLink: "https://forms.google.com/example-hackonomics",
+      registrationLink: "",
       description:
         "A full-day ideathon bringing together innovative minds to solve real-world financial challenges through technology and creative business models.",
       longDescription:
@@ -95,17 +89,11 @@ export function EventDetails() {
       ],
       speakers: [
         {
-          name: "Ankit Agarwal",
-          role: "Co-founder & CEO",
-          company: "FinTech Innovations Pvt Ltd",
-          bio: "Serial entrepreneur with 3 successful fintech exits",
-        },
-        {
-          name: "Neha Gupta",
-          role: "Investment Partner",
-          company: "Sequoia Capital India",
-          bio: "Focuses on early-stage fintech and SaaS investments",
-        },
+          name: "BEYOND THE BEAN",
+          role: "MD & CEO",
+          company: "BEYOND THE BEAN",
+          bio: " Entrepreneur with 3 successful exits",
+        }
       ],
     },
   };
@@ -261,11 +249,10 @@ export function EventDetails() {
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-2xl text-[#e8e8ea]">Register Now</h3>
                     <span
-                      className={`px-3 py-1 rounded-full text-sm ${
-                        event.registrationLink && event.registrationLink.trim() !== ''
-                          ? "bg-[#C9A227]/20 text-[#C9A227]"
-                          : "bg-red-500/20 text-red-400"
-                      }`}
+                      className={`px-3 py-1 rounded-full text-sm ${event.registrationLink && event.registrationLink.trim() !== ''
+                        ? "bg-[#C9A227]/20 text-[#C9A227]"
+                        : "bg-red-500/20 text-red-400"
+                        }`}
                     >
                       {event.registrationLink && event.registrationLink.trim() !== '' ? "Open" : "Closed"}
                     </span>
