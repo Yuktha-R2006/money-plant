@@ -206,7 +206,7 @@ export default function EventsConducted() {
                   key={event.id}
                   className="bg-white/5 backdrop-blur-lg rounded-xl overflow-hidden border border-yellow-500/20 hover:bg-yellow-500/10 transition-all duration-300 hover:scale-105"
                 >
-                  <div className="relative h-48 bg-gradient-to-br from-yellow-500/20 to-yellow-600/10">
+                  <div className="relative h-64 bg-[#141824]">
                     {/* Left Navigation */}
                     {event.images.length > 1 && (
                       <button

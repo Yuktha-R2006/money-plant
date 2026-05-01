@@ -4,7 +4,6 @@ interface Sponsor {
   id: number;
   name: string;
   logo: string;
-  tier: 'platinum' | 'gold' | 'silver' | 'partner';
   website?: string;
   description?: string;
 }
@@ -29,67 +28,18 @@ export default function Sponsors() {
     {
       id: 1,
       name: "Beyond the Bean",
-      logo: "coffee",
-      tier: "platinum",
-      website: "#",
+      logo: "/sponsors/beyond the bean.png",
+      website: "https://beyondthebeancafe.com/",
       description: "Premium coffee partner supporting student innovation"
     },
     {
       id: 2,
-      name: "TechCorp Solutions",
-      logo: "tech",
-      tier: "gold",
-      website: "#",
-      description: "Technology solutions for modern businesses"
-    },
-    {
-      id: 3,
-      name: "FinanceFirst",
-      logo: "finance",
-      tier: "gold",
-      website: "#",
-      description: "Financial services and education platform"
-    },
-    {
-      id: 4,
-      name: "Innovation Labs",
-      logo: "innovation",
-      tier: "silver",
-      website: "#",
-      description: "Research and development partner"
-    },
-    {
-      id: 5,
-      name: "StartupHub",
-      logo: "startup",
-      tier: "silver",
-      website: "#",
-      description: "Incubator for student startups"
-    },
-    {
-      id: 6,
-      name: "EduTech Academy",
-      logo: "education",
-      tier: "partner",
-      website: "#",
-      description: "Educational technology partner"
+      name: "Trade Steady Academy",
+      logo: "/sponsors/tradesteady.png",
+      website: "https://www.tradesteady.in/",
+      description: "Trading education and financial literacy platform"
     }
   ];
-
-  const getTierStyles = (tier: string) => {
-    switch (tier) {
-      case 'platinum':
-        return 'bg-gradient-to-r from-purple-500/20 to-pink-500/20 border-purple-500/30 hover:from-purple-500/30 hover:to-pink-500/30';
-      case 'gold':
-        return 'bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border-yellow-500/30 hover:from-yellow-500/30 hover:to-orange-500/30';
-      case 'silver':
-        return 'bg-gradient-to-r from-gray-500/20 to-blue-500/20 border-gray-500/30 hover:from-gray-500/30 hover:to-blue-500/30';
-      case 'partner':
-        return 'bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 border-yellow-500/30 hover:from-yellow-500/30 hover:to-yellow-600/30';
-      default:
-        return 'bg-white/5 border-yellow-500/20 hover:bg-yellow-500/10';
-    }
-  };
 
   const handleBecomeSponsor = () => {
     // Handle sponsor inquiry
@@ -114,11 +64,11 @@ export default function Sponsors() {
 
 
         {/* Sponsors Grid */}
-        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           {sponsors.map((sponsor) => (
             <div
               key={sponsor.id}
-              className={`group relative professional-card cursor-pointer ${getTierStyles(sponsor.tier)} transform transition-all duration-500 hover:scale-105`}
+              className="group relative professional-card cursor-pointer bg-white/5 border-yellow-500/20 hover:bg-yellow-500/10 transform transition-all duration-500 hover:scale-105"
               onMouseEnter={() => setHoveredSponsor(sponsor.id)}
               onMouseLeave={() => setHoveredSponsor(null)}
             >
@@ -144,69 +94,20 @@ export default function Sponsors() {
                   
                   {/* Logo container with glassmorphism and lift effect */}
                   <div 
-                    className={`relative w-14 h-14 mx-auto flex items-center justify-center rounded-full bg-white/5 backdrop-blur-md border border-white/10 transform transition-all duration-300 cursor-pointer ${
+                    className={`relative w-24 h-24 mx-auto flex items-center justify-center rounded-full overflow-hidden bg-white/5 backdrop-blur-md border border-yellow-500/30 transform transition-all duration-300 cursor-pointer ${
                       hoveredLogo === sponsor.id 
-                        ? 'scale-110 -translate-y-2 bg-yellow-500/15 border-yellow-400/40 shadow-lg shadow-yellow-500/20' 
+                        ? 'scale-110 -translate-y-2 bg-yellow-500/15 border-yellow-400/50 shadow-lg shadow-yellow-500/20' 
                         : 'scale-100 translate-y-0'
                     }`}
                     onMouseEnter={() => setHoveredLogo(sponsor.id)}
                     onMouseLeave={() => setHoveredLogo(null)}
                     onClick={() => handleLogoClick(sponsor.website || '#')}
                   >
-                    {sponsor.logo === 'coffee' && (
-                      <svg className={`w-8 h-8 transition-all duration-300 ${
-                        hoveredLogo === sponsor.id 
-                          ? 'text-yellow-300 drop-shadow-lg drop-shadow-yellow-500/50' 
-                          : 'text-yellow-400 grayscale'
-                      }`} fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M21 15.546c-.523 0-.905.404-.905.904v.01c0 .5.382.382.904.905.904.523 0 .905-.404.905-.904v-.01c0-.5-.382-.904-.905-.904zM20.095 14.095c.523 0 .905-.404.905-.904v-.01c0-.5-.382-.904-.905-.904-.523 0-.905.404-.905.904v.01c0 .5.382.382.904.905.904zM3.905 14.095c-.523 0-.905.404-.905.904v.01c0 .5.382.382.904.905.904.523 0 .905-.404.905-.904v-.01c0-.5-.382-.904-.905-.904zM3.905 15.546c-.523 0-.905.404-.905.904v.01c0 .5.382.382.904.905.904.523 0 .905-.404.905-.904v-.01c0-.5-.382-.904-.905-.904zM12 2.25c-.523 0-.905.404-.905.904v.01c0 .5.382.382.904.905.904.523 0 .905-.404.905-.904v-.01c0-.5-.382-.904-.905-.904z" />
-                      </svg>
-                    )}
-                    {sponsor.logo === 'tech' && (
-                      <svg className={`w-8 h-8 transition-all duration-300 ${
-                        hoveredLogo === sponsor.id 
-                          ? 'text-yellow-300 drop-shadow-lg drop-shadow-yellow-500/50' 
-                          : 'text-yellow-400 grayscale'
-                      }`} fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    )}
-                    {sponsor.logo === 'finance' && (
-                      <svg className={`w-8 h-8 transition-all duration-300 ${
-                        hoveredLogo === sponsor.id 
-                          ? 'text-yellow-300 drop-shadow-lg drop-shadow-yellow-500/50' 
-                          : 'text-yellow-400 grayscale'
-                      }`} fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    )}
-                    {sponsor.logo === 'innovation' && (
-                      <svg className={`w-8 h-8 transition-all duration-300 ${
-                        hoveredLogo === sponsor.id 
-                          ? 'text-yellow-300 drop-shadow-lg drop-shadow-yellow-500/50' 
-                          : 'text-yellow-400 grayscale'
-                      }`} fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                      </svg>
-                    )}
-                    {sponsor.logo === 'startup' && (
-                      <svg className={`w-8 h-8 transition-all duration-300 ${
-                        hoveredLogo === sponsor.id 
-                          ? 'text-yellow-300 drop-shadow-lg drop-shadow-yellow-500/50' 
-                          : 'text-yellow-400 grayscale'
-                      }`} fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                      </svg>
-                    )}
-                    {sponsor.logo === 'education' && (
-                      <svg className={`w-8 h-8 transition-all duration-300 ${
-                        hoveredLogo === sponsor.id 
-                          ? 'text-yellow-300 drop-shadow-lg drop-shadow-yellow-500/50' 
-                          : 'text-yellow-400 grayscale'
-                      }`} fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                      </svg>
-                    )}
+                    <img
+                      src={sponsor.logo}
+                      alt={sponsor.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
               </div>

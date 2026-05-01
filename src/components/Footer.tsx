@@ -6,10 +6,7 @@ export default function Footer() {
     }
   };
 
-  const handleSocialClick = (platform: string) => {
-    console.log(`Opening ${platform}`);
-    // In a real app, this would open the social media links
-  };
+ 
 
   return (
     <footer className="relative bg-black border-t border-yellow-500/15">
