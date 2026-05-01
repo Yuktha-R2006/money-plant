@@ -27,8 +27,7 @@ export function EventDetails() {
       category: string;
       icon: React.ReactNode;
       gradient: string;
-      googleFormUrl: string;
-      registrationOpen: boolean;
+      registrationLink?: string;
       description: string;
       longDescription: string;
       highlights: string[];
@@ -44,8 +43,7 @@ export function EventDetails() {
       category: "Workshop",
       icon: <TrendingUp className="w-12 h-12" />,
       gradient: "from-[#d4af37] to-[#aa8a2b]",
-      googleFormUrl: "https://forms.google.com/example-wealthwise",
-      registrationOpen: true,
+      registrationLink: "https://forms.google.com/example-wealthwise",
       description:
         "An intensive 3-hour workshop designed to transform beginners into confident traders. Learn from industry veterans who have navigated bull and bear markets successfully.",
       longDescription:
@@ -82,8 +80,7 @@ export function EventDetails() {
       category: "Competition",
       icon: <Lightbulb className="w-12 h-12" />,
       gradient: "from-[#C9A227] to-[#A67C00]",
-      googleFormUrl: "https://forms.google.com/example-hackonomics",
-      registrationOpen: true,
+      registrationLink: "https://forms.google.com/example-hackonomics",
       description:
         "A full-day ideathon bringing together innovative minds to solve real-world financial challenges through technology and creative business models.",
       longDescription:
@@ -265,20 +262,20 @@ export function EventDetails() {
                     <h3 className="text-2xl text-[#e8e8ea]">Register Now</h3>
                     <span
                       className={`px-3 py-1 rounded-full text-sm ${
-                        event.registrationOpen
+                        event.registrationLink && event.registrationLink.trim() !== ''
                           ? "bg-[#C9A227]/20 text-[#C9A227]"
                           : "bg-red-500/20 text-red-400"
                       }`}
                     >
-                      {event.registrationOpen ? "Open" : "Closed"}
+                      {event.registrationLink && event.registrationLink.trim() !== '' ? "Open" : "Closed"}
                     </span>
                   </div>
                   <p className="text-[#9ca3af] mb-6 leading-relaxed">
                     Secure your spot at this exclusive event. Limited seats available!
                   </p>
-                  {event.registrationOpen && event.googleFormUrl ? (
+                  {event.registrationLink && event.registrationLink.trim() !== '' ? (
                     <a
-                      href={event.googleFormUrl}
+                      href={event.registrationLink}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-2 w-full px-6 py-4 bg-gradient-to-r from-[#d4af37] to-[#aa8a2b] text-[#0a0e1a] text-center rounded-lg hover:shadow-lg hover:shadow-[#d4af37]/20 transition-all duration-300 mb-4"

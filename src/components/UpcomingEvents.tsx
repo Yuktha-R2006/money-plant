@@ -7,6 +7,7 @@ interface Event {
   time: string;
   description: string;
   category: string;
+  registrationLink?: string;
 }
 
 export default function UpcomingEvents() {
@@ -17,7 +18,8 @@ export default function UpcomingEvents() {
       date: "2024-05-15",
       time: "2:00 PM - 4:00 PM",
       description: "Learn the basics of stock market investing, portfolio diversification, and risk management strategies.",
-      category: "Workshop"
+      category: "Workshop",
+      registrationLink: ""
     },
     {
       id: 2,
@@ -25,7 +27,8 @@ export default function UpcomingEvents() {
       date: "2024-05-20",
       time: "10:00 AM - 6:00 PM",
       description: "Present your business ideas to investors and win exciting prizes. Open to all students.",
-      category: "Competition"
+      category: "Competition",
+      registrationLink: ""
     },
     {
       id: 3,
@@ -50,10 +53,10 @@ export default function UpcomingEvents() {
     }
   };
 
-  const handleRegister = (eventId: number) => {
-    // Handle registration logic here
-    console.log(`Registering for event ${eventId}`);
-    // You could show a modal or navigate to a registration page
+  const handleRegister = (registrationLink?: string) => {
+    if (registrationLink) {
+      window.open(registrationLink, '_blank');
+    }
   };
 
   return (
@@ -140,12 +143,21 @@ export default function UpcomingEvents() {
                 </p>
 
                 {/* Register Button */}
-                <button
-                  onClick={() => handleRegister(event.id)}
-                  className="w-full px-4 py-3 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-semibold rounded-lg hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105"
-                >
-                  Register Now
-                </button>
+                {event.registrationLink && event.registrationLink.trim() !== '' ? (
+                  <button
+                    onClick={() => handleRegister(event.registrationLink)}
+                    className="w-full px-4 py-3 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-semibold rounded-lg hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105"
+                  >
+                    Register Now
+                  </button>
+                ) : (
+                  <button
+                    disabled
+                    className="w-full px-4 py-3 bg-gray-600/50 text-gray-400 font-semibold rounded-lg cursor-not-allowed opacity-50"
+                  >
+                    Register Now
+                  </button>
+                )}
               </div>
             ))}
           </div>
@@ -154,9 +166,9 @@ export default function UpcomingEvents() {
         {/* View All Events Button */}
         {events.length > 0 && (
           <div className="text-center mt-12">
-            <button className="px-8 py-4 border border-yellow-500/50 text-yellow-400 font-semibold rounded-lg bg-yellow-500/10 backdrop-blur-sm transition-all duration-300 hover:bg-yellow-500/20 hover:border-yellow-400 hover:scale-105">
+            <a href="#events" className="inline-block px-8 py-4 border border-yellow-500/50 text-yellow-400 font-semibold rounded-lg bg-yellow-500/10 backdrop-blur-sm transition-all duration-300 hover:bg-yellow-500/20 hover:border-yellow-400 hover:scale-105">
               View All Events
-            </button>
+            </a>
           </div>
         )}
       </div>

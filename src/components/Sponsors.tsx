@@ -91,6 +91,21 @@ export default function Sponsors() {
     }
   };
 
+  const getTierBadge = (tier: string) => {
+    switch (tier) {
+      case 'platinum':
+        return 'bg-purple-500/20 text-purple-400 border-purple-500/30';
+      case 'gold':
+        return 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30';
+      case 'silver':
+        return 'bg-gray-500/20 text-gray-400 border-gray-500/30';
+      case 'partner':
+        return 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30'
+      default:
+        return 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30'
+    }
+  };
+
   const handleBecomeSponsor = () => {
     // Handle sponsor inquiry
     console.log('Opening sponsor inquiry form');
@@ -110,6 +125,26 @@ export default function Sponsors() {
             Supporting our mission to empower the next generation of financial leaders
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto rounded-full"></div>
+        </div>
+
+        {/* Sponsor Tiers Legend */}
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
+          <div className="flex items-center gap-2">
+            <div className="w-4 h-4 rounded-full bg-purple-500"></div>
+            <span className="text-gray-300 text-sm">Platinum</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-4 h-4 rounded-full bg-yellow-500"></div>
+            <span className="text-gray-300 text-sm">Gold</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-4 h-4 rounded-full bg-gray-400"></div>
+            <span className="text-gray-300 text-sm">Silver</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-4 h-4 rounded-full bg-yellow-600"></div>
+            <span className="text-gray-300 text-sm">Partner</span>
+          </div>
         </div>
 
         {/* Sponsors Grid */}
@@ -207,6 +242,9 @@ export default function Sponsors() {
                       </svg>
                     )}
                   </div>
+                </div>
+                <div className={`inline-block px-3 py-1 text-xs font-semibold rounded-full border mb-3 ${getTierBadge(sponsor.tier)}`}>
+                  {sponsor.tier.charAt(0).toUpperCase() + sponsor.tier.slice(1)}
                 </div>
               </div>
 

@@ -441,6 +441,102 @@ export function Home() {
           </div>
         </div>
       </section>
+
+      {/* Events Section */}
+      <section id="events" className="py-20 bg-[#141824]/50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-5xl mb-4 text-[#e8e8ea]">Events</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#d4af37] to-[#C9A227] mx-auto mb-6"></div>
+            <p className="text-xl text-[#9ca3af] max-w-3xl mx-auto">
+              Explore our upcoming workshops and past successful events
+            </p>
+          </motion.div>
+
+          {/* Upcoming Events Subsection */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-16"
+          >
+            <h3 className="text-3xl mb-8 text-[#e8e8ea] flex items-center gap-3">
+              <Calendar className="w-8 h-8 text-[#d4af37]" />
+              Upcoming Events
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {upcomingEvents.map((event, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="bg-[#141824] rounded-xl border border-[#d4af37]/20 p-6 hover:border-[#d4af37] hover:shadow-lg hover:shadow-[#d4af37]/10 transition-all duration-300 group"
+                >
+                  <span className="inline-block px-3 py-1 bg-[#C9A227]/20 text-[#C9A227] rounded-full text-sm mb-4">
+                    {event.category}
+                  </span>
+                  <h4 className="text-xl mb-3 text-[#e8e8ea] group-hover:text-[#d4af37] transition-colors duration-300">
+                    {event.title}
+                  </h4>
+                  <div className="flex items-center gap-2 text-[#9ca3af]">
+                    <Calendar className="w-4 h-4 text-[#d4af37]" />
+                    <span className="text-sm">{event.date}</span>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Events Conducted Subsection */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h3 className="text-3xl mb-8 text-[#e8e8ea] flex items-center gap-3">
+              <TrendingUp className="w-8 h-8 text-[#d4af37]" />
+              Events Conducted
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                { title: "Stock Market Basics Workshop", date: "March 15, 2026", category: "Workshop" },
+                { title: "Financial Planning Seminar", date: "February 28, 2026", category: "Seminar" },
+                { title: "Trading Competition", date: "January 20, 2026", category: "Competition" },
+              ].map((event, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="bg-[#141824] rounded-xl border border-[#d4af37]/20 p-6 hover:border-[#d4af37] hover:shadow-lg hover:shadow-[#d4af37]/10 transition-all duration-300 group"
+                >
+                  <span className="inline-block px-3 py-1 bg-[#C9A227]/20 text-[#C9A227] rounded-full text-sm mb-4">
+                    {event.category}
+                  </span>
+                  <h4 className="text-xl mb-3 text-[#e8e8ea] group-hover:text-[#d4af37] transition-colors duration-300">
+                    {event.title}
+                  </h4>
+                  <div className="flex items-center gap-2 text-[#9ca3af]">
+                    <Calendar className="w-4 h-4 text-[#d4af37]" />
+                    <span className="text-sm">{event.date}</span>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
 }
