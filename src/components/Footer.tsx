@@ -23,7 +23,7 @@ export default function Footer() {
             <div className="flex items-center space-x-3">
               <div className="w-8 h-8 rounded-full overflow-hidden border border-yellow-500/30">
                 <img
-                  src="/logo.jpeg"
+                  src="/logo.png"
                   alt="Money Plant Club Logo"
                   className="w-full h-full object-cover"
                 />

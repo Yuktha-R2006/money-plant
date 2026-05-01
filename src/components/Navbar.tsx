@@ -34,7 +34,7 @@ export default function Navbar({ activeSection }: NavbarProps) {
               {/* Circular Logo */}
               <div className="w-9 h-9 rounded-full overflow-hidden border border-yellow-500/30">
              <img
-              src="/logo.jpeg"
+              src="/logo.png"
               alt="Money Plant Club Logo"
               className="w-full h-full object-cover"
                  />
