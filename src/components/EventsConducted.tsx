@@ -9,11 +9,12 @@ interface PastEvent {
   participants?: number;
   prizePool?: string;
   domains?: string[];
-  image?: string;
+  images: string[];
 }
 
 export default function EventsConducted() {
   const [selectedEvent, setSelectedEvent] = useState<number | null>(null);
+  const [currentImageIndices, setCurrentImageIndices] = useState<Record<number, number>>({});
 
   const events: PastEvent[] = [
     {
@@ -28,7 +29,7 @@ export default function EventsConducted() {
         "Hands-on trading simulation"
       ],
       participants: 45,
-      image: "trading-workshop"
+      images: ["/images/event 1.png", "/images/event 1 (2).png"]
     },
     {
       id: 2,
@@ -44,7 +45,7 @@ export default function EventsConducted() {
       participants: 200,
       prizePool: "₹7000",
       domains: ["AI", "Blockchain", "Robotics", "IoT", "FinTech"],
-      image: "hackonomics"
+      images: ["/images/event2.png", "/images/event2(1).png"]
     }
   ];
 
@@ -54,6 +55,24 @@ export default function EventsConducted() {
       year: 'numeric', 
       month: 'long', 
       day: 'numeric' 
+    });
+  };
+
+  const handlePreviousImage = (eventId: number) => {
+    setCurrentImageIndices(prev => {
+      const currentIndex = prev[eventId] || 0;
+      const event = events.find(e => e.id === eventId);
+      const newIndex = currentIndex === 0 ? (event?.images.length || 1) - 1 : currentIndex - 1;
+      return { ...prev, [eventId]: newIndex };
+    });
+  };
+
+  const handleNextImage = (eventId: number) => {
+    setCurrentImageIndices(prev => {
+      const currentIndex = prev[eventId] || 0;
+      const event = events.find(e => e.id === eventId);
+      const newIndex = currentIndex === (event?.images.length || 1) - 1 ? 0 : currentIndex + 1;
+      return { ...prev, [eventId]: newIndex };
     });
   };
 
@@ -180,32 +199,67 @@ export default function EventsConducted() {
         <div className="mt-16">
           <h3 className="text-2xl font-bold text-center text-yellow-400 mb-8">Event Gallery</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {events.map((event) => (
-              <div
-                key={event.id}
-                className="bg-white/5 backdrop-blur-lg rounded-xl overflow-hidden border border-yellow-500/20 hover:bg-yellow-500/10 transition-all duration-300 hover:scale-105"
-              >
-                <div className="h-48 bg-gradient-to-br from-yellow-500/20 to-yellow-600/10 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                      {event.title.includes('Trading') ? (
-                        <svg className="w-10 h-10 text-yellow-400" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            {events.map((event) => {
+              const currentIndex = currentImageIndices[event.id] || 0;
+              return (
+                <div
+                  key={event.id}
+                  className="bg-white/5 backdrop-blur-lg rounded-xl overflow-hidden border border-yellow-500/20 hover:bg-yellow-500/10 transition-all duration-300 hover:scale-105"
+                >
+                  <div className="relative h-48 bg-gradient-to-br from-yellow-500/20 to-yellow-600/10">
+                    {/* Left Navigation */}
+                    {event.images.length > 1 && (
+                      <button
+                        onClick={() => handlePreviousImage(event.id)}
+                        className="absolute left-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center transition-all duration-300 z-10"
+                      >
+                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
                         </svg>
-                      ) : (
-                        <svg className="w-10 h-10 text-yellow-400" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </button>
+                    )}
+
+                    
+                    {/* Image Display */}
+                     <img
+                      src={event.images[currentIndex]}
+                      alt={event.title}
+                     className="w-full h-full object-cover"
+                     />
+
+                    {/* Right Navigation */}
+                    {event.images.length > 1 && (
+                      <button
+                        onClick={() => handleNextImage(event.id)}
+                        className="absolute right-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center transition-all duration-300 z-10"
+                      >
+                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                         </svg>
-                      )}
-                    </div>
-                    <div className="text-yellow-400 font-semibold">{event.title}</div>
+                      </button>
+                    )}
+
+                    {/* Image Indicators */}
+                    {event.images.length > 1 && (
+                      <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-1">
+                        {event.images.map((_, idx) => (
+                          <div
+                            key={idx}
+                            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                              idx === currentIndex ? 'bg-yellow-400' : 'bg-gray-500'
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                  <div className="p-4 text-center">
+                    <h4 className="text-lg font-semibold text-white mb-2">{event.title}</h4>
+                    <p className="text-gray-300 text-sm">{event.description}</p>
                   </div>
                 </div>
-                <div className="p-4">
-                  <p className="text-gray-300 text-sm">{event.description}</p>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 
