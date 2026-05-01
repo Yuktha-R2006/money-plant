@@ -214,15 +214,15 @@ export default function EventsConducted() {
           <h3 className="text-2xl font-bold text-center text-yellow-400 mb-8">Our Impact</h3>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="text-center">
-              <div className="text-3xl font-bold text-yellow-400 mb-2">500+</div>
+              <div className="text-3xl font-bold text-yellow-400 mb-2">400+</div>
               <div className="text-gray-300">Total Participants</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-yellow-400 mb-2">15+</div>
+              <div className="text-3xl font-bold text-yellow-400 mb-2">10+</div>
               <div className="text-gray-300">Events Conducted</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-yellow-400 mb-2">₹50K+</div>
+              <div className="text-3xl font-bold text-yellow-400 mb-2">₹25K+</div>
               <div className="text-gray-300">Prize Distribution</div>
             </div>
             <div className="text-center">

@@ -336,10 +336,10 @@ export default function Recruitment() {
           <h3 className="text-xl font-bold text-yellow-400 mb-4 text-center">Get in Touch</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <div>
-              <p className="text-gray-300">sponsorship@moneyplantclub.com</p>
+              <p className="text-gray-300">themoneyplantclub@gmail.com</p>
             </div>
             <div>
-              <p className="text-gray-300">+91 98765 43210</p>
+              <p className="text-gray-300">+91 8277006362</p>
             </div>
             <div>
               <p className="text-gray-300">Bangalore, India</p>

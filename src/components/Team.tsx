@@ -211,11 +211,11 @@ export default function Team() {
           <h3 className="text-2xl font-bold text-yellow-400 mb-6 text-center">Our Team Strength</h3>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="text-center">
-              <div className="text-3xl font-bold text-yellow-400 mb-2">6+</div>
+              <div className="text-3xl font-bold text-yellow-400 mb-2">10+</div>
               <div className="text-gray-300">Core Members</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-yellow-400 mb-2">50+</div>
+              <div className="text-3xl font-bold text-yellow-400 mb-2">30+</div>
               <div className="text-gray-300">Active Volunteers</div>
             </div>
             <div className="text-center">
