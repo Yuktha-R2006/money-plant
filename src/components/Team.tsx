@@ -24,74 +24,63 @@ export default function Team() {
       image: "faculty",
       bio: "Guiding the club with expertise and mentorship in financial education",
       social: {
-        linkedin: "#",
-        email: "faculty@moneyplantclub.com"
+        linkedin: "",
+        email: ""
       }
     },
     {
       id: 1,
       name: "Karthik Moger",
       role: "President",
-      image: "president",
+      image: "/team/kartik.png",
       bio: "Leading the club with vision and passion for financial education",
       social: {
-        linkedin: "#",
-        email: "karthik@moneyplantclub.com"
+        linkedin: "https://www.linkedin.com/in/kartik-moger-b2b226340?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+        email: "kartikmoger74@gmail.com"
       }
     },
     {
       id: 2,
       name: "Tanushree M",
       role: "Student Coordinator",
-      image: "coordinator",
+      image: "/team/tanushree.png",
       bio: "Organizing events and managing team coordination",
       social: {
-        linkedin: "#",
-        email: "tanushree@moneyplantclub.com"
+        linkedin: "https://www.linkedin.com/in/tanushree-m?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+        email: "tanushreem1605@gmail.com"
       }
     },
     {
       id: 3,
       name: "Bharadwaj B R",
-      role: "Technical Lead",
-      image: "technical",
+      role: "Technical Head",
+      image: "/team/bharadwaj.png",
       bio: "Managing technical aspects and digital initiatives",
       social: {
-        linkedin: "#",
-        email: "bharadwaj@moneyplantclub.com"
+        linkedin: "https://www.linkedin.com/in/bhadradwaj-bhadra-roy-526927325/",
+        email: "bharadwajbhadraroy@gmail.com"
       }
     },
     {
       id: 4,
-      name: "Yogendra Naik",
+      name: "Yogendra R Naik",
       role: "Technical Head",
       image: "events",
       bio: "Planning and executing successful club events",
       social: {
-        linkedin: "#",
+        linkedin: "https://www.linkedin.com/in/yogendra-r-naik-aba228347?utm_source=share_via&utm_content=profile&utm_medium=member_android",
         email: "yogendra@moneyplantclub.com"
       }
     },
     {
       id: 5,
       name: "Shradha Basavaraj",
-      role: "Marketing Lead",
-      image: "marketing",
+      role: "Media and Design Head",
+      image: "/team/shradha.png",
       bio: "Handling marketing and promotional activities",
       social: {
         linkedin: "#",
-        email: "shradha@moneyplantclub.com"
-      }
-    },
-    {
-      id: 6,
-      name: "",
-      role: "Media and Design Head",
-      image: "finance",
-      bio: "Managing club finances and sponsorships",
-      social: {
-        linkedin: "#",
-        email: "media@moneyplantclub.com"
+        email: "hurakadlishradha@gmail.com"
       }
     }
   ];
@@ -104,8 +93,9 @@ export default function Team() {
   };
 
   const handleSocialClick = (platform: string, url: string) => {
-    console.log(`Opening ${platform}: ${url}`);
-    // In a real app, this would open the social media link
+    if (!url || url === "#") return; // prevent empty links
+
+    window.open(url, "_blank");
   };
 
   return (
@@ -133,68 +123,81 @@ export default function Team() {
               onMouseEnter={() => setHoveredMember(member.id)}
               onMouseLeave={() => setHoveredMember(null)}
             >
-              {/* Glassmorphism Card */}
-              <div className="relative bg-white/3 backdrop-blur-lg rounded-2xl border border-yellow-500/15 p-8 transition-all duration-300 group-hover:scale-103 group-hover:shadow-lg group-hover:shadow-yellow-500/12">
-                
-                {/* Hover Glow Effect */}
-                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-yellow-500/5 to-yellow-600/5 blur-xl"></div>
+              {/* Premium Profile Card */}
+              <div className="relative bg-white/5 backdrop-blur-xl rounded-2xl border border-yellow-500/20 p-5 transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-[0_8px_30px_rgb(234,179,8,0.15)] flex flex-col h-full">
 
-                {/* Profile Image */}
-                <div className="relative z-10 text-center mb-6">
-                  <div className="relative inline-block avatar-container">
-                    <div className="w-24 h-24 mx-auto rounded-full bg-gray-800/50 flex items-center justify-center border border-yellow-500/30 group-hover:scale-105 transition-transform duration-300 overflow-hidden avatar-image">
-                      {/* Neutral placeholder silhouette */}
-                      <svg className="w-16 h-16 text-gray-400/80" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                      </svg>
-                    </div>
-                    {/* Animated Ring */}
-                    <div className="absolute inset-0 rounded-full border border-yellow-500/50 opacity-0 group-hover:opacity-100 group-hover:animate-ping"></div>
+                {/* Hover Glow Effect */}
+                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-yellow-500/10 via-transparent to-transparent pointer-events-none"></div>
+
+                {/* Cover Style Profile Image */}
+                <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden border border-yellow-500/30 bg-gray-800/80 mb-6 group-hover:border-yellow-500/50 transition-colors duration-500 shadow-inner">
+                  {member.image && member.image !== "" ? (
+                    <img
+                      src={member.image}
+                      alt={member.name || member.role}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                        e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                      }}
+                    />
+                  ) : null}
+                  {/* Fallback Icon */}
+                  <div className={`w-full h-full flex items-center justify-center ${member.image && member.image !== "" ? 'hidden' : ''}`}>
+                    <svg className="w-20 h-20 text-gray-500/50" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                    </svg>
                   </div>
+
+                  {/* Subtle Image Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
                 </div>
 
-                {/* Member Info */}
-                <div className="relative z-10 text-center">
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors duration-300">
+                {/* Card Content */}
+                <div className="flex flex-col items-center flex-grow relative z-10">
+                  {/* Name */}
+                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors duration-300 text-center">
                     {member.name}
                   </h3>
-                  
+
                   {/* Role Badge */}
-                  <div className={`inline-block px-3 py-1 mb-4 text-xs font-semibold rounded-full ${getRoleBadgeColor(member.role)} text-gray-900`}>
+                  <div className={`inline-block px-4 py-1.5 mb-4 text-xs font-bold rounded-md ${getRoleBadgeColor(member.role)} text-gray-900 uppercase tracking-widest shadow-sm`}>
                     {member.role}
                   </div>
 
-                  {/* Bio - Show on Hover */}
-                  <div className={`text-center transition-all duration-300 ${
-                    hoveredMember === member.id ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
-                  }`}>
-                    <p className="text-gray-300 text-sm mb-4">{member.bio}</p>
+                  {/* Bio */}
+                  <div className="text-center mb-6 flex-grow flex items-center justify-center w-full">
+                    <p className="text-gray-400 text-sm leading-relaxed">{member.bio}</p>
                   </div>
 
-                  {/* Social Icons - Always Show 2 Active Icons */}
-                  <div className={`flex justify-center gap-4 transition-all duration-300 ${
-                    hoveredMember === member.id ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
-                  }`}>
-                    {/* LinkedIn */}
-                    <button
-                      onClick={() => handleSocialClick('LinkedIn', member.social.linkedin || '#')}
-                      className="w-10 h-10 rounded-full bg-gray-700/50 border border-gray-600/50 flex items-center justify-center text-gray-400 hover:bg-gray-600/50 hover:text-yellow-400 hover:border-yellow-500/30 transition-all duration-300 hover:scale-105"
-                    >
-                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                      </svg>
-                    </button>
-                    
-                    {/* Email */}
-                    <button
-                      onClick={() => handleSocialClick('Email', `mailto:${member.social.email || ''}`)}
-                      className="w-10 h-10 rounded-full bg-gray-700/50 border border-gray-600/50 flex items-center justify-center text-gray-400 hover:bg-gray-600/50 hover:text-yellow-400 hover:border-yellow-500/30 transition-all duration-300 hover:scale-105"
-                    >
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    </button>
-                  </div>
+                  {/* Social Icons */}
+                  {member.role !== "Faculty Coordinator" && (
+                    <div className="flex justify-center gap-4 w-full pt-5 border-t border-yellow-500/10">
+                      {/* LinkedIn */}
+                      {member.social.linkedin && member.social.linkedin !== "#" && (
+                        <button
+                          onClick={() => handleSocialClick('LinkedIn', member.social.linkedin as string)}
+                          className="w-10 h-10 rounded-lg bg-gray-800/80 border border-gray-600/50 flex items-center justify-center text-gray-400 hover:bg-yellow-500/10 hover:text-yellow-400 hover:border-yellow-500/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_12px_rgb(234,179,8,0.2)]"
+                        >
+                          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                          </svg>
+                        </button>
+                      )}
+
+                      {/* Email */}
+                      {member.social.email && member.social.email !== "#" && (
+                        <button
+                          onClick={() => handleSocialClick('Email', `mailto:${member.social.email}`)}
+                          className="w-10 h-10 rounded-lg bg-gray-800/80 border border-gray-600/50 flex items-center justify-center text-gray-400 hover:bg-yellow-500/10 hover:text-yellow-400 hover:border-yellow-500/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_12px_rgb(234,179,8,0.2)]"
+                        >
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          </svg>
+                        </button>
+                      )}
+                    </div>
+                  )}
                 </div>
               </div>
 
