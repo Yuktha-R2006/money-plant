@@ -61,23 +61,13 @@ export default function Team() {
         email: "bharadwajbhadraroy@gmail.com"
       }
     },
+    
     {
       id: 4,
-      name: "Yogendra R Naik",
-      role: "Technical Head",
-      image: "events",
-      bio: "Managing technical aspects and digital initiatives",
-      social: {
-        linkedin: "https://www.linkedin.com/in/yogendra-r-naik-aba228347?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-        email: "yogendra@moneyplantclub.com"
-      }
-    },
-    {
-      id: 5,
       name: "Shradha Basavaraj",
       role: "Media and Design Head",
       image: "/team/shradha.png",
-      bio: "Shaping visuals and building identity",
+      bio: "Shaping visuals and crafting visuals that define the brand",
       social: {
         linkedin: "#",
         email: "hurakadlishradha@gmail.com"
