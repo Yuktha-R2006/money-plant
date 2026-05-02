@@ -9,12 +9,11 @@ interface PastEvent {
   participants?: number;
   prizePool?: string;
   domains?: string[];
-  images: string[];
+  image: string;
 }
 
 export default function EventsConducted() {
   const [selectedEvent, setSelectedEvent] = useState<number | null>(null);
-  const [currentImageIndices, setCurrentImageIndices] = useState<Record<number, number>>({});
 
   const events: PastEvent[] = [
     {
@@ -29,7 +28,7 @@ export default function EventsConducted() {
         "Hands-on trading simulation"
       ],
       participants: 45,
-      images: ["/images/event 1.png", "/images/event 1 (2).png"]
+      image: "/images/event 1.png"
     },
     {
       id: 2,
@@ -45,7 +44,7 @@ export default function EventsConducted() {
       participants: 200,
       prizePool: "₹7000+",
       domains: ["AI", "Blockchain", "Robotics", "IoT", "FinTech"],
-      images: ["/images/event2.png", "/images/event2(1).png"]
+      image: "/images/event2.png"
     }
   ];
 
@@ -55,24 +54,6 @@ export default function EventsConducted() {
       year: 'numeric',
       month: 'long',
       day: 'numeric'
-    });
-  };
-
-  const handlePreviousImage = (eventId: number) => {
-    setCurrentImageIndices(prev => {
-      const currentIndex = prev[eventId] || 0;
-      const event = events.find(e => e.id === eventId);
-      const newIndex = currentIndex === 0 ? (event?.images.length || 1) - 1 : currentIndex - 1;
-      return { ...prev, [eventId]: newIndex };
-    });
-  };
-
-  const handleNextImage = (eventId: number) => {
-    setCurrentImageIndices(prev => {
-      const currentIndex = prev[eventId] || 0;
-      const event = events.find(e => e.id === eventId);
-      const newIndex = currentIndex === (event?.images.length || 1) - 1 ? 0 : currentIndex + 1;
-      return { ...prev, [eventId]: newIndex };
     });
   };
 
@@ -198,7 +179,6 @@ export default function EventsConducted() {
           <h3 className="text-2xl font-bold text-center text-yellow-400 mb-8">Event Gallery</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {events.map((event) => {
-              const currentIndex = currentImageIndices[event.id] || 0;
               return (
                 <div
                   key={event.id}
@@ -208,53 +188,15 @@ export default function EventsConducted() {
                     {/* Blurred Background Image for empty spaces in object-contain */}
                     <div 
                       className="absolute inset-0 bg-cover bg-center opacity-40 blur-xl scale-110 pointer-events-none transition-all duration-500"
-                      style={{ backgroundImage: `url(${event.images[currentIndex]})` }}
+                      style={{ backgroundImage: `url(${event.image})` }}
                     />
-
-                    {/* Left Navigation */}
-                    {event.images.length > 1 && (
-                      <button
-                        onClick={() => handlePreviousImage(event.id)}
-                        className="absolute left-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center transition-all duration-300 z-20"
-                      >
-                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-                        </svg>
-                      </button>
-                    )}
-
 
                     {/* Image Display */}
                     <img
-                      src={event.images[currentIndex]}
+                      src={event.image}
                       alt={event.title}
                       className="relative z-10 w-full h-full object-contain md:object-cover transition-all duration-500"
                     />
-
-                    {/* Right Navigation */}
-                    {event.images.length > 1 && (
-                      <button
-                        onClick={() => handleNextImage(event.id)}
-                        className="absolute right-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center transition-all duration-300 z-20"
-                      >
-                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                        </svg>
-                      </button>
-                    )}
-
-                    {/* Image Indicators */}
-                    {event.images.length > 1 && (
-                      <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-1 z-20">
-                        {event.images.map((_, idx) => (
-                          <div
-                            key={idx}
-                            className={`w-2 h-2 rounded-full transition-all duration-300 ${idx === currentIndex ? 'bg-yellow-400' : 'bg-gray-500'
-                              }`}
-                          />
-                        ))}
-                      </div>
-                    )}
                   </div>
                   <div className="p-4 text-center">
                     <h4 className="text-lg font-semibold text-white mb-2">{event.title}</h4>
