@@ -1,123 +1,4 @@
-import { useState } from 'react';
-
-interface FormData {
-  name: string;
-  email: string;
-  phone: string;
-  branch: string;
-  year: string;
-  whyJoin: string;
-  experience: string;
-  interests: string[];
-}
-
 export default function Recruitment() {
-  const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    phone: '',
-    branch: '',
-    year: '',
-    whyJoin: '',
-    experience: '',
-    interests: []
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
-  const [errors, setErrors] = useState<Partial<FormData>>({});
-
-  const branches = [
-    'Computer Science & Engineering',
-    'Information Science & Engineering',
-    'Electronics & Communication',
-    'Mechanical Engineering',
-    'Civil Engineering',
-    'Electrical Engineering',
-    'Other'
-  ];
-
-  const years = ['1st Year', '2nd Year', '3rd Year', '4th Year'];
-  
-  const interestOptions = [
-    'Trading & Investment',
-    'Entrepreneurship',
-    'Financial Planning',
-    'Market Analysis',
-    'Cryptocurrency',
-    'Personal Finance',
-    'Startup Ideas',
-    'Risk Management'
-  ];
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-    // Clear error when user starts typing
-    if (errors[name as keyof FormData]) {
-      setErrors(prev => ({ ...prev, [name]: '' }));
-    }
-  };
-
-  const handleInterestToggle = (interest: string) => {
-    setFormData(prev => ({
-      ...prev,
-      interests: prev.interests.includes(interest)
-        ? prev.interests.filter(i => i !== interest)
-        : [...prev.interests, interest]
-    }));
-  };
-
-  const validateForm = () => {
-    const newErrors: Partial<FormData> = {};
-
-    if (!formData.name.trim()) newErrors.name = 'Name is required';
-    if (!formData.email.trim()) newErrors.email = 'Email is required';
-    else if (!/^\S+@\S+\.\S+$/.test(formData.email)) newErrors.email = 'Invalid email format';
-    if (!formData.phone.trim()) newErrors.phone = 'Phone number is required';
-    if (!formData.branch) newErrors.branch = 'Branch is required';
-    if (!formData.year) newErrors.year = 'Year is required';
-    if (!formData.whyJoin.trim()) newErrors.whyJoin = 'Please tell us why you want to join';
-    if (formData.interests.length === 0) newErrors.interests = ['Please select at least one interest'];
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!validateForm()) return;
-
-    setIsSubmitting(true);
-
-    try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      // Show success message
-      setShowSuccess(true);
-      
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        branch: '',
-        year: '',
-        whyJoin: '',
-        experience: '',
-        interests: []
-      });
-
-      // Hide success message after 5 seconds
-      setTimeout(() => setShowSuccess(false), 5000);
-    } catch (error) {
-      console.error('Submission error:', error);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   return (
     <section id="join" className="py-20 px-4 sm:px-6 lg:px-8 relative bg-gradient-to-b from-transparent to-yellow-500/5">
@@ -126,209 +7,60 @@ export default function Recruitment() {
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
             <span className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
-              Join Money Plant Club
+              Join Our Community
             </span>
           </h2>
           <p className="text-xl text-gray-300 mb-4">
-            Become part of our financial literacy movement
+            Connect with us through our official channels
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto rounded-full"></div>
         </div>
 
-        {/* Success Message */}
-        {showSuccess && (
-          <div className="mb-8 p-6 bg-yellow-500/20 border border-yellow-500/30 rounded-xl backdrop-blur-sm animate-fadeIn">
-            <div className="flex items-center">
-              <div className="text-yellow-400 mr-3">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        {/* Community Links */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          {/* WhatsApp Group */}
+          <a
+            href="https://chat.whatsapp.com/CjRJKqdUK1u2LbPgBBvyRX"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-yellow-500/20 hover:bg-yellow-500/10 hover:border-yellow-500/40 transition-all duration-300 hover:scale-105 cursor-pointer"
+          >
+            <div className="flex flex-col items-center text-center">
+              <div className="w-16 h-16 mb-4 flex items-center justify-center rounded-full bg-yellow-500/20 group-hover:bg-yellow-500/30 transition-all duration-300">
+                <svg className="w-8 h-8 text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                 </svg>
               </div>
-              <div>
-                <h3 className="text-yellow-400 font-semibold">Application Submitted Successfully!</h3>
-                <p className="text-gray-300">We'll review your application and get back to you soon.</p>
+              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors duration-300">
+                WhatsApp Group
+              </h3>
+              <p className="text-gray-300 text-sm">
+                Join our community for updates and discussions
+              </p>
+            </div>
+          </a>
+
+          {/* Instagram Page */}
+          <a
+            href="https://www.instagram.com/mpcofbmsit?igsh=bWY4cDR2c2hmZng4"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-yellow-500/20 hover:bg-yellow-500/10 hover:border-yellow-500/40 transition-all duration-300 hover:scale-105 cursor-pointer"
+          >
+            <div className="flex flex-col items-center text-center">
+              <div className="w-16 h-16 mb-4 flex items-center justify-center rounded-full bg-yellow-500/20 group-hover:bg-yellow-500/30 transition-all duration-300">
+                <svg className="w-8 h-8 text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z"/>
+                </svg>
               </div>
+              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors duration-300">
+                Instagram Page
+              </h3>
+              <p className="text-gray-300 text-sm">
+                Follow us for updates and behind-the-scenes content
+              </p>
             </div>
-          </div>
-        )}
-
-        {/* Registration Form */}
-        <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-yellow-500/20">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Personal Information */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
-                  Full Name *
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  className={`w-full px-4 py-3 bg-black/50 border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300 ${
-                    errors.name ? 'border-red-500' : 'border-yellow-500/30'
-                  }`}
-                  placeholder="Enter your full name"
-                />
-                {errors.name && <p className="text-red-400 text-sm mt-1">{errors.name}</p>}
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
-                  Email Address *
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  className={`w-full px-4 py-3 bg-black/50 border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300 ${
-                    errors.email ? 'border-red-500' : 'border-yellow-500/30'
-                  }`}
-                  placeholder="your.email@example.com"
-                />
-                {errors.email && <p className="text-red-400 text-sm mt-1">{errors.email}</p>}
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
-                  Phone Number *
-                </label>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                  className={`w-full px-4 py-3 bg-black/50 border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300 ${
-                    errors.phone ? 'border-red-500' : 'border-yellow-500/30'
-                  }`}
-                  placeholder="+91 98765 43210"
-                />
-                {errors.phone && <p className="text-red-400 text-sm mt-1">{errors.phone}</p>}
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
-                  Branch *
-                </label>
-                <select
-                  name="branch"
-                  value={formData.branch}
-                  onChange={handleInputChange}
-                  className={`w-full px-4 py-3 bg-black/50 border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300 ${
-                    errors.branch ? 'border-red-500' : 'border-yellow-500/30'
-                  }`}
-                >
-                  <option value="">Select your branch</option>
-                  {branches.map(branch => (
-                    <option key={branch} value={branch}>{branch}</option>
-                  ))}
-                </select>
-                {errors.branch && <p className="text-red-400 text-sm mt-1">{errors.branch}</p>}
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">
-                Year of Study *
-              </label>
-              <select
-                name="year"
-                value={formData.year}
-                onChange={handleInputChange}
-                className={`w-full px-4 py-3 bg-black/50 border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300 ${
-                  errors.year ? 'border-red-500' : 'border-yellow-500/30'
-                }`}
-              >
-                <option value="">Select your year</option>
-                {years.map(year => (
-                  <option key={year} value={year}>{year}</option>
-                ))}
-              </select>
-              {errors.year && <p className="text-red-400 text-sm mt-1">{errors.year}</p>}
-            </div>
-
-            {/* Interests */}
-            <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">
-                Areas of Interest *
-              </label>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                {interestOptions.map(interest => (
-                  <label
-                    key={interest}
-                    className="flex items-center p-3 bg-black/50 border border-yellow-500/30 rounded-lg cursor-pointer hover:bg-yellow-500/10 transition-all duration-300"
-                  >
-                    <input
-                      type="checkbox"
-                      checked={formData.interests.includes(interest)}
-                      onChange={() => handleInterestToggle(interest)}
-                      className="mr-2 text-yellow-500 focus:ring-yellow-500"
-                    />
-                    <span className="text-sm text-gray-300">{interest}</span>
-                  </label>
-                ))}
-              </div>
-              {errors.interests && <p className="text-red-400 text-sm mt-1">Please select at least one interest</p>}
-            </div>
-
-            {/* Why Join */}
-            <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">
-                Why do you want to join Money Plant Club? *
-              </label>
-              <textarea
-                name="whyJoin"
-                value={formData.whyJoin}
-                onChange={handleInputChange}
-                rows={4}
-                className={`w-full px-4 py-3 bg-black/50 border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300 resize-none ${
-                  errors.whyJoin ? 'border-red-500' : 'border-yellow-500/30'
-                }`}
-                placeholder="Tell us about your motivation and what you hope to gain from joining..."
-              />
-              {errors.whyJoin && <p className="text-red-400 text-sm mt-1">{errors.whyJoin}</p>}
-            </div>
-
-            {/* Experience (Optional) */}
-            <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">
-                Previous Experience (Optional)
-              </label>
-              <textarea
-                name="experience"
-                value={formData.experience}
-                onChange={handleInputChange}
-                rows={3}
-                className="w-full px-4 py-3 bg-black/50 border border-yellow-500/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300 resize-none"
-                placeholder="Any previous experience in finance, trading, or entrepreneurship..."
-              />
-            </div>
-
-            {/* Submit Button */}
-            <div className="pt-6">
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-semibold rounded-lg hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
-              >
-                {isSubmitting ? (
-                  <span className="flex items-center justify-center">
-                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    Submitting...
-                  </span>
-                ) : (
-                  'Join the Club'
-                )}
-              </button>
-            </div>
-          </form>
+          </a>
         </div>
 
         {/* Contact Information */}

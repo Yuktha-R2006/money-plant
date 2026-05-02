@@ -183,17 +183,13 @@ export default function Sponsors() {
             Your support helps us create impactful events and educational opportunities.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              onClick={handleBecomeSponsor}
+          <div className="flex justify-center">
+            <a
+              href="mailto:themoneyplantclub@gmail.com?subject=Sponsorship%20Inquiry%20%E2%80%93%20Money%20Plant%20Club&body=Hello%2C%20I%20am%20interested%20in%20sponsoring%20Money%20Plant%20Club.%20Please%20share%20more%20details."
               className="px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-semibold rounded-lg hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105"
             >
               Become a Sponsor
-            </button>
-            
-            <button className="px-8 py-4 border border-yellow-500/50 text-yellow-400 font-semibold rounded-lg bg-yellow-500/10 backdrop-blur-sm transition-all duration-300 hover:bg-yellow-500/20 hover:border-yellow-400 hover:scale-105">
-              Download Sponsorship Deck
-            </button>
+            </a>
           </div>
         </div>
 
