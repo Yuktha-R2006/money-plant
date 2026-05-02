@@ -16,7 +16,7 @@ export default function UpcomingEvents() {
       id: 1,
       title: "Stock Market Investment Fundamentals Workshop",
       date: "2024-05-7",
-      time: "2:00 PM - 4:00 PM",
+      time: "9:00 AM - 12:30 PM",
       description: "Learn the basics of stock market investing, portfolio diversification, and risk management strategies.",
       category: "Workshop",
       registrationLink: "https://forms.gle/eK1dx2ahcF1FqyX76"
