@@ -69,7 +69,7 @@ export default function Team() {
       image: "/team/shradha.png",
       bio: "Shaping visuals and crafting visuals that define the brand",
       social: {
-        linkedin: "#",
+        linkedin: "https://www.linkedin.com/in/shradha-hurakadli-464401357?utm_source=share_via&utm_content=profile&utm_medium=member_android",
         email: "hurakadlishradha@gmail.com"
       }
     }
