@@ -184,18 +184,12 @@ export default function EventsConducted() {
                   key={event.id}
                   className="bg-white/5 backdrop-blur-lg rounded-xl overflow-hidden border border-yellow-500/20 hover:bg-yellow-500/10 transition-all duration-300 hover:scale-105"
                 >
-                  <div className="relative h-56 sm:h-64 md:h-72 bg-[#141824] overflow-hidden flex items-center justify-center">
-                    {/* Blurred Background Image for empty spaces in object-contain */}
-                    <div 
-                      className="absolute inset-0 bg-cover bg-center opacity-40 blur-xl scale-110 pointer-events-none transition-all duration-500"
-                      style={{ backgroundImage: `url(${event.image})` }}
-                    />
-
+                  <div className="relative h-56 sm:h-64 md:h-72 bg-[#141824] overflow-hidden">
                     {/* Image Display */}
                     <img
                       src={event.image}
                       alt={event.title}
-                      className="relative z-10 w-full h-full object-contain md:object-cover transition-all duration-500"
+                      className="w-full h-full object-cover object-center transition-transform duration-500"
                     />
                   </div>
                   <div className="p-4 text-center">
