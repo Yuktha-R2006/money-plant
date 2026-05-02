@@ -15,7 +15,7 @@ export default function UpcomingEvents() {
     {
       id: 1,
       title: "Stock Market Investment Fundamentals Workshop",
-      date: "2024-05-7",
+      date: "2026-05-7",
       time: "9:00 AM - 12:30 PM",
       description: "Learn the basics of stock market investing, portfolio diversification, and risk management strategies.",
       category: "Workshop",
@@ -24,8 +24,8 @@ export default function UpcomingEvents() {
     {
       id: 2,
       title: "Startup Pitch Competition",
-      date: "2024-05-20",
-      time: "10:00 AM - 6:00 PM",
+      date: "2026-05-28",
+      time: "9:00 AM - 5:00 PM",
       description: "Present your business ideas to investors and win exciting prizes. Open to all students.",
       category: "Competition",
       registrationLink: ""
@@ -33,8 +33,8 @@ export default function UpcomingEvents() {
     {
       id: 3,
       title: "Financial Planning 101",
-      date: "2024-05-25",
-      time: "3:00 PM - 5:00 PM",
+      date: "2026-06-20",
+      time: "9:00 AM - 1:00 PM",
       description: "Understand budgeting, saving, and creating a personal financial plan for long-term success.",
       category: "Seminar"
     }
