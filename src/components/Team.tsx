@@ -21,7 +21,7 @@ export default function Team() {
       id: 0,
       name: "Dr Balbhadra Kishore ",
       role: "Faculty Coordinator",
-      image: "faculty",
+      image: "/team/faculty.png",
       bio: "Guiding the club with expertise and mentorship in financial education",
       social: {
         linkedin: "",
