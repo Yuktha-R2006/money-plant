@@ -66,7 +66,7 @@ export default function Team() {
       name: "Yogendra R Naik",
       role: "Technical Head",
       image: "events",
-      bio: "Planning and executing successful club events",
+      bio: "Managing technical aspects and digital initiatives",
       social: {
         linkedin: "https://www.linkedin.com/in/yogendra-r-naik-aba228347?utm_source=share_via&utm_content=profile&utm_medium=member_android",
         email: "yogendra@moneyplantclub.com"
@@ -77,7 +77,7 @@ export default function Team() {
       name: "Shradha Basavaraj",
       role: "Media and Design Head",
       image: "/team/shradha.png",
-      bio: "Handling marketing and promotional activities",
+      bio: "Shaping visuals and building identity",
       social: {
         linkedin: "#",
         email: "hurakadlishradha@gmail.com"
