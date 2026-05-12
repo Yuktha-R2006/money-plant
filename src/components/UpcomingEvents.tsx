@@ -3,8 +3,8 @@ import { useState } from 'react';
 interface Event {
   id: number;
   title: string;
-  date: string;
-  time: string;
+  date?: string;
+  time?: string;
   description: string;
   category: string;
   registrationLink?: string;
@@ -15,8 +15,8 @@ export default function UpcomingEvents() {
     {
       id: 1,
       title: "Stock Market Investment Fundamentals Workshop",
-      date: "2026-05-7",
-      time: "9:00 AM - 12:30 PM",
+      date: "2026-05-26",
+      time: "9:30 AM - 12:30 PM",
       description: "Learn the basics of stock market investing, portfolio diversification, and risk management strategies.",
       category: "Workshop",
       registrationLink: "https://forms.gle/eK1dx2ahcF1FqyX76"
@@ -24,7 +24,7 @@ export default function UpcomingEvents() {
     {
       id: 2,
       title: "Startup Pitch Competition",
-      date: "2026-05-28",
+      date: "2026-06-10",
       time: "9:00 AM - 5:00 PM",
       description: "Present your business ideas to investors and win exciting prizes. Open to all students.",
       category: "Competition",
@@ -33,7 +33,7 @@ export default function UpcomingEvents() {
     {
       id: 3,
       title: "Financial Planning 101",
-      date: "2026-06-20",
+      date: "2026-06-15",
       time: "9:00 AM - 1:00 PM",
       description: "Understand budgeting, saving, and creating a personal financial plan for long-term success.",
       category: "Seminar"
@@ -117,25 +117,31 @@ export default function UpcomingEvents() {
                 </h3>
 
                 {/* Event Date & Time */}
-                <div className="space-y-2 mb-4">
-                  <div className="flex items-center text-gray-300">
-                    <svg className="w-5 h-5 mr-2 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    {new Date(event.date).toLocaleDateString('en-US', { 
-                      weekday: 'long', 
-                      year: 'numeric', 
-                      month: 'long', 
-                      day: 'numeric' 
-                    })}
+                {(event.date || event.time) && (
+                  <div className="space-y-2 mb-4">
+                    {event.date && (
+                      <div className="flex items-center text-gray-300">
+                        <svg className="w-5 h-5 mr-2 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        {new Date(event.date).toLocaleDateString('en-US', { 
+                          weekday: 'long', 
+                          year: 'numeric', 
+                          month: 'long', 
+                          day: 'numeric' 
+                        })}
+                      </div>
+                    )}
+                    {event.time && (
+                      <div className="flex items-center text-gray-300">
+                        <svg className="w-5 h-5 mr-2 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        {event.time}
+                      </div>
+                    )}
                   </div>
-                  <div className="flex items-center text-gray-300">
-                    <svg className="w-5 h-5 mr-2 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    {event.time}
-                  </div>
-                </div>
+                )}
 
                 {/* Event Description */}
                 <p className="text-gray-300 mb-6 line-clamp-3">
